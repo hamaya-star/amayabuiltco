@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Amaya Built Co. LLC</title>
-  <meta name="description" content="Concrete • Excavation • Flatwork • Foundations — Residential & Commercial" />
+  <meta name="description" content="Concrete • Excavation • Flatwork • Foundations" />
 
   <style>
     :root{
@@ -12,306 +12,207 @@
       --card:#0f1117;
       --silver:#c9ced6;
       --silver2:#aeb4be;
-      --text:#f3f5f7;
-      --muted:rgba(201,206,214,.82);
       --line:rgba(201,206,214,.18);
       --glow:rgba(201,206,214,.12);
+      --text:#f3f5f7;
+      --muted:#c9ced6cc;
     }
-
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
+    *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       background:
-        radial-gradient(900px 500px at 20% 10%, rgba(201,206,214,.10), transparent 60%),
-        radial-gradient(900px 500px at 80% 20%, rgba(201,206,214,.08), transparent 60%),
-        radial-gradient(1200px 700px at 50% 80%, rgba(201,206,214,.06), transparent 65%),
-        var(--bg);
+        radial-gradient(1200px 600px at 50% -10%, rgba(201,206,214,.10), transparent 60%),
+        radial-gradient(900px 500px at 80% 15%, rgba(201,206,214,.08), transparent 55%),
+        radial-gradient(700px 400px at 15% 35%, rgba(201,206,214,.06), transparent 60%),
+        linear-gradient(180deg, #07080b 0%, #06070a 60%, #050609 100%);
+      color:var(--text);
     }
-
-    a{ color:inherit; text-decoration:none; }
-    .container{ width:min(1100px, 92vw); margin:0 auto; }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1100px; margin:0 auto; padding:28px 18px 70px}
 
     /* Header */
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      background: linear-gradient(to bottom, rgba(7,8,11,.72), rgba(7,8,11,.25));
-      border-bottom: 1px solid rgba(201,206,214,.10);
-    }
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      padding:18px 0;
+    .topbar{
+      position:sticky; top:14px; z-index:50;
+      background:rgba(8,10,14,.62);
+      backdrop-filter: blur(12px);
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow: 0 12px 38px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.03) inset;
+      padding:14px 16px;
+      display:flex; align-items:center; gap:16px;
     }
     .brand{
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-      line-height:1.1;
+      display:flex; align-items:center; gap:12px;
+      min-width:260px;
     }
-    .brand .name{
-      font-weight:800;
-      letter-spacing:.2px;
-      font-size:18px;
+    .brand .mark{
+      width:44px; height:44px; border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      display:grid; place-items:center;
+      overflow:hidden;
     }
-    .brand .tag{
-      font-size:12.5px;
+    .brand .mark img{width:100%; height:100%; object-fit:cover}
+    .brand h1{
+      font-size:16px; margin:0; line-height:1.1; letter-spacing:.2px;
+    }
+    .brand p{
+      margin:2px 0 0; font-size:12px; color:var(--muted);
+    }
+    .nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
+    .nav a{
+      padding:10px 10px;
+      border-radius:12px;
       color:var(--muted);
-      letter-spacing:.25px;
+      font-weight:600;
+      font-size:14px;
     }
-    .menu{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .menu a{
-      font-size:13.5px;
-      color:var(--muted);
-      padding:8px 10px;
-      border-radius:10px;
-      transition: all .15s ease;
-      border: 1px solid transparent;
-    }
-    .menu a:hover{
+    .nav a:hover{
       color:var(--text);
-      border-color: rgba(201,206,214,.18);
-      background: rgba(15,17,23,.55);
-      box-shadow: 0 0 0 4px rgba(201,206,214,.05);
+      background:rgba(255,255,255,.04);
+    }
+    .nav a.active{
+      color:var(--text);
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--line);
     }
 
     /* Hero */
-    main{ padding:44px 0 70px; }
-    .hero{
-      padding:40px 0 10px;
-    }
-
-    /* ONE big logo, centered */
-    .hero-logo-wrap{
+    .hero{padding:44px 4px 10px}
+    .heroLogo{
       display:flex;
       justify-content:center;
-      margin: 10px 0 22px;
+      margin:18px 0 22px;
     }
-    .hero-logo{
-      width: 260px;     /* 🔥 MAKE BIGGER/SMALLER HERE */
-      max-width: 70vw;
-      height: auto;
-      display:block;
-      filter: drop-shadow(0 18px 40px rgba(0,0,0,.55));
+    .heroLogo img{
+      width:min(420px, 70vw);
+      height:auto;
+      filter: drop-shadow(0 20px 45px rgba(0,0,0,.55));
     }
-
-    .hero h1{
-      font-size: clamp(42px, 5.2vw, 70px);
-      line-height: 1.02;
-      margin: 0 0 16px;
-      letter-spacing: -0.8px;
+    .headline{
+      font-size: clamp(42px, 6vw, 72px);
+      line-height:1.02;
+      margin:0 0 14px;
+      letter-spacing:-.02em;
     }
-    .hero p{
+    .sub{
+      max-width:62ch;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.6;
       margin:0 0 22px;
-      max-width: 70ch;
-      color: var(--muted);
-      font-size: 16.5px;
-      line-height: 1.6;
     }
-    .cta{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top: 6px;
-    }
+    .btns{display:flex; gap:12px; flex-wrap:wrap}
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 12px 16px;
-      border-radius: 14px;
-      border: 1px solid rgba(201,206,214,.18);
-      background: rgba(15,17,23,.62);
-      color: var(--text);
-      font-weight: 700;
-      font-size: 14px;
-      transition: all .15s ease;
-      box-shadow: 0 10px 30px rgba(0,0,0,.28);
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      font-weight:700;
     }
-    .btn:hover{
-      transform: translateY(-1px);
-      border-color: rgba(201,206,214,.28);
-      box-shadow: 0 14px 36px rgba(0,0,0,.36);
-    }
+    .btn:hover{background:rgba(255,255,255,.07)}
     .btn.primary{
-      background: linear-gradient(180deg, rgba(201,206,214,.20), rgba(15,17,23,.70));
+      background:rgba(255,255,255,.08);
+      border-color:rgba(255,255,255,.16);
     }
 
     /* Cards */
     .grid{
       display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-      margin-top: 26px;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:14px;
+      margin-top:26px;
     }
     .card{
-      grid-column: span 4;
-      background: rgba(15,17,23,.70);
-      border: 1px solid rgba(201,206,214,.16);
-      border-radius: 18px;
-      padding: 18px;
+      background:rgba(15,17,23,.7);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
       box-shadow: 0 18px 60px rgba(0,0,0,.35);
     }
-    .card h3{
-      margin:0 0 8px;
-      font-size: 15.5px;
-      letter-spacing:.2px;
-    }
-    .card p{
-      margin:0;
-      color: var(--muted);
-      line-height: 1.55;
-      font-size: 14px;
-    }
-
-    /* Sections */
-    section{
-      margin-top: 34px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(201,206,214,.10);
-    }
-    section h2{
-      margin: 0 0 10px;
-      font-size: 22px;
-    }
-    .section-card{
-      background: rgba(15,17,23,.62);
-      border: 1px solid rgba(201,206,214,.14);
-      border-radius: 18px;
-      padding: 18px;
-    }
-
-    /* Footer */
-    footer{
-      margin-top: 60px;
-      padding: 28px 0;
-      border-top: 1px solid rgba(201,206,214,.10);
-      color: rgba(201,206,214,.75);
-      font-size: 13px;
-    }
-
-    /* Responsive */
+    .card h3{margin:0 0 8px; font-size:16px}
+    .card p{margin:0; color:var(--muted); line-height:1.55}
     @media (max-width: 900px){
-      .card{ grid-column: span 12; }
-      .menu{ gap:8px; }
-      .menu a{ padding:7px 9px; }
-      .hero-logo{ width: 230px; }
+      .grid{grid-template-columns:1fr}
+      .brand{min-width:auto}
+    }
+
+    footer{
+      margin-top:44px;
+      color:rgba(201,206,214,.55);
+      font-size:12px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      border-top:1px solid var(--line);
+      padding-top:18px;
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <div class="nav">
-        <!-- TEXT ONLY BRAND (no small logo) -->
-        <div class="brand">
-          <div class="name">Amaya Built Co. LLC</div>
-          <div class="tag">Concrete • Excavation • Flatwork • Foundations</div>
-        </div>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="mark">
+          <img src="assets/logo.png" alt="Amaya Built Co. LLC" />
+        </span>
+        <span>
+          <h1>Amaya Built Co. LLC</h1>
+          <p>Concrete • Excavation • Flatwork • Foundations</p>
+        </span>
+      </a>
 
-        <nav class="menu" aria-label="Main navigation">
-          <a href="#home">Home</a>
-          <a href="#services">Services</a>
-          <a href="#projects">Projects</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </nav>
+      <nav class="nav">
+        <a class="active" href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <!-- BIG CENTER LOGO (Home only) -->
+      <div class="heroLogo">
+        <img src="assets/logo.png" alt="Amaya Built Co. LLC logo" />
       </div>
-    </div>
-  </header>
 
-  <main class="container" id="home">
-    <div class="hero">
-      <!-- ONE centered logo -->
-      <div class="hero-logo-wrap">
-        <img class="hero-logo" src="logo.png" alt="Amaya Built Co. LLC logo" />
-      </div>
-
-      <h1>Professional concrete work.<br/>Built clean. Built right.</h1>
-      <p>
-        Amaya Built Co. LLC delivers modern, high-quality concrete and site work for both residential and commercial clients.
-        From slabs and flatwork to footings and foundations, we show up prepared and finish strong.
+      <h2 class="headline">Professional concrete work.<br/>Built clean. Built right.</h2>
+      <p class="sub">
+        Amaya Built Co. LLC delivers modern, high-quality concrete and site work for both
+        residential and commercial clients. From slabs and flatwork to footings and foundations,
+        we show up prepared and finish strong.
       </p>
 
-      <div class="cta">
-        <a class="btn primary" href="#contact">Request a Quote</a>
-        <a class="btn" href="#projects">View Projects</a>
+      <div class="btns">
+        <a class="btn primary" href="contact.html">Request a Quote</a>
+        <a class="btn" href="projects.html">View Projects</a>
       </div>
 
-      <div class="grid" role="list">
-        <div class="card" role="listitem">
+      <section class="grid" aria-label="Highlights">
+        <div class="card">
           <h3>Residential</h3>
-          <p>Driveways, patios, sidewalks, steps, garage slabs, and additions—clean edges and proper base prep.</p>
+          <p>Driveways, patios, sidewalks, steps, garage slabs, and additions—built with clean edges and proper base prep.</p>
         </div>
-        <div class="card" role="listitem">
+        <div class="card">
           <h3>Commercial</h3>
           <p>Slabs, flatwork, equipment pads, and site concrete—delivered safely, on schedule, with clear communication.</p>
         </div>
-        <div class="card" role="listitem">
+        <div class="card">
           <h3>Process</h3>
-          <p>Scope review → site prep → form & rebar → pour & finish → cleanup. No surprises—just solid work.</p>
+          <p>Scope review → site prep → form & rebar → pour & finish → cleanup. No surprises, just solid work.</p>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <section id="services">
-      <h2>Services</h2>
-      <div class="section-card">
-        <p>
-          Concrete flatwork • Footings & foundations • Sidewalks & approaches • Demolition & removal • Excavation & grading • Rebar installation
-        </p>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="section-card">
-        <p>
-          Add photos later: create a “projects” folder in your repo and we’ll build a clean gallery layout.
-        </p>
-      </div>
-    </section>
-
-    <section id="about">
-      <h2>About</h2>
-      <div class="section-card">
-        <p>
-          Amaya Built Co. LLC is a Nebraska-based concrete and sitework contractor focused on quality, schedule, and communication.
-          We take pride in doing it right the first time.
-        </p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="section-card">
-        <p>
-          Email: <a href="mailto:info@amayabuiltco.com">info@amayabuiltco.com</a><br/>
-          Phone: <a href="tel:+14025551234">(402) 555-1234</a><br/>
-          Service area: Lincoln / Omaha + surrounding areas
-        </p>
-      </div>
-    </section>
-
-    <footer>
-      <div>© <span id="y"></span> Amaya Built Co. LLC. All rights reserved.</div>
-    </footer>
-  </main>
+      <footer>
+        <span>© <span id="y"></span> Amaya Built Co. LLC</span>
+        <span>Lincoln, NE • Serving surrounding areas</span>
+      </footer>
+    </main>
+  </div>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
