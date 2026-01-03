@@ -2,39 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Services | Amaya Built Co. LLC</title>
-  <style>
-    :root{--bg:#07080b;--card:#0f1117;--silver:#c9ced6;--muted:#c9ced6cc;--line:rgba(201,206,214,.18);--text:#f3f5f7;}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:radial-gradient(1200px 600px at 50% -10%, rgba(201,206,214,.10), transparent 60%),linear-gradient(180deg,#07080b 0%,#050609 100%);color:var(--text)}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1100px;margin:0 auto;padding:28px 18px 70px}
-    .topbar{position:sticky;top:14px;z-index:50;background:rgba(8,10,14,.62);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:18px;padding:14px 16px;display:flex;align-items:center;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .mark{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);overflow:hidden}
-    .mark img{width:100%;height:100%;object-fit:cover}
-    .brand h1{font-size:16px;margin:0}
-    .brand p{margin:2px 0 0;font-size:12px;color:var(--muted)}
-    .nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
-    .nav a{padding:10px 10px;border-radius:12px;color:var(--muted);font-weight:600;font-size:14px}
-    .nav a.active{color:var(--text);background:rgba(255,255,255,.06);border:1px solid var(--line)}
-    .pageTitle{margin:34px 0 10px;font-size:40px;letter-spacing:-.02em}
-    .lead{color:var(--muted);max-width:70ch;line-height:1.6}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:20px}
-    .card{background:rgba(15,17,23,.7);border:1px solid var(--line);border-radius:18px;padding:18px}
-    .card h3{margin:0 0 8px}
-    .card ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.7}
-    @media (max-width:900px){.grid{grid-template-columns:1fr}}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrap">
-    <header class="topbar">
-      <a class="brand" href="index.html">
-        <span class="mark"><img src="assets/logo.png" alt="Amaya Built Co. LLC" /></span>
-        <span><h1>Amaya Built Co. LLC</h1><p>Concrete • Excavation • Flatwork • Foundations</p></span>
-      </a>
+
+  <div class="container topbar">
+    <div class="navShell">
+      <div class="brand">
+        <div class="name">Amaya Built Co. LLC</div>
+        <div class="tag">Concrete • Excavation • Flatwork • Foundations</div>
+      </div>
+
       <nav class="nav">
         <a href="index.html">Home</a>
         <a class="active" href="services.html">Services</a>
@@ -42,49 +22,56 @@
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
-    </header>
-
-    <h2 class="pageTitle">Services</h2>
-    <p class="lead">Professional concrete and site work for residential and commercial projects. If you don’t see your scope listed, contact us—chances are we do it.</p>
-
-    <section class="grid">
-      <div class="card">
-        <h3>Residential Concrete</h3>
-        <ul>
-          <li>Driveways & approach replacements</li>
-          <li>Sidewalks, patios, steps</li>
-          <li>Garage slabs & extensions</li>
-          <li>Small additions / flatwork</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Commercial Concrete</h3>
-        <ul>
-          <li>Slabs & flatwork</li>
-          <li>Equipment pads</li>
-          <li>Site concrete & curb repairs</li>
-          <li>Concrete demo & replace</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Foundations</h3>
-        <ul>
-          <li>Footings</li>
-          <li>Foundation walls (as scoped)</li>
-          <li>Rebar placement</li>
-          <li>Forming & stripping</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Excavation / Prep</h3>
-        <ul>
-          <li>Grading & base prep</li>
-          <li>Removal / demo (as scoped)</li>
-          <li>Compaction coordination</li>
-          <li>Site cleanup</li>
-        </ul>
-      </div>
-    </section>
+    </div>
   </div>
+
+  <div class="container">
+    <h1 class="h1" style="font-size:42px;margin-top:18px">Services</h1>
+    <p class="lead">Quality workmanship, clean finishes, and clear communication — for residential and commercial projects.</p>
+
+    <div class="split">
+      <div class="card">
+        <h3>Driveways</h3>
+        <p>Removal, base prep, forming, reinforcement, pour & finish.</p>
+      </div>
+      <div class="card">
+        <h3>Patios & Sidewalks</h3>
+        <p>Modern flatwork with clean edges and proper drainage.</p>
+      </div>
+      <div class="card">
+        <h3>Garage / Interior Slabs</h3>
+        <p>New pours and additions with strong base and reinforcement.</p>
+      </div>
+      <div class="card">
+        <h3>Footings & Foundations</h3>
+        <p>Footings, walls, and structural concrete scopes.</p>
+      </div>
+      <div class="card">
+        <h3>Equipment Pads</h3>
+        <p>Commercial pads and site concrete built to spec.</p>
+      </div>
+      <div class="card">
+        <h3>Excavation & Site Prep</h3>
+        <p>Grading, removals, and site readiness before concrete work.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="card">
+        <h3>Need a quote?</h3>
+        <p>Tell us what you’re building and we’ll respond with next steps.</p>
+        <div class="btnRow">
+          <a class="btn primary" href="contact.html">Request a Quote</a>
+          <a class="btn" href="projects.html">See Projects</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">© <span id="y"></span> Amaya Built Co. LLC</div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
