@@ -1,1 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | Amaya Built Co. LLC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container topbar">
+    <div class="navShell">
+      <div class="brand">
+        <div class="name">Amaya Built Co. LLC</div>
+        <div class="tag">Concrete • Excavation • Flatwork • Foundations</div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a class="active" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 class="h1" style="font-size:42px;margin-top:18px">Contact</h1>
+    <p class="lead">Send project details and we’ll get back to you with next steps.</p>
+
+    <div class="split">
+      <div class="card">
+        <h3>Request a quote</h3>
+
+        <!-- STATIC-SITE FRIENDLY: this opens the user's email app -->
+        <form action="mailto:YOUR_EMAIL_HERE?subject=Quote%20Request%20-%20Amaya%20Built%20Co" method="post" enctype="text/plain">
+          <div class="field">
+            <label>Your name</label>
+            <input name="Name" placeholder="Full name" required>
+          </div>
+          <div class="field">
+            <label>Phone</label>
+            <input name="Phone" placeholder="(###) ###-####">
+          </div>
+          <div class="field">
+            <label>Project address</label>
+            <input name="Address" placeholder="Street, City">
+          </div>
+          <div class="field">
+            <label>Details</label>
+            <textarea name="Details" placeholder="What are we building? Dimensions? Timeline?"></textarea>
+          </div>
+          <button class="btn primary" type="submit">Send Email</button>
+          <p><small>Tip: Include photos and rough dimensions for the fastest quote.</small></p>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>Service area</h3>
+        <p>Lincoln, NE + surrounding areas.</p>
+        <br>
+        <h3>What to include</h3>
+        <p>• Address<br>• Photos<br>• Rough dimensions<br>• Desired timeline<br>• Any plan/sketch</p>
+        <br>
+        <a class="btn" href="projects.html">See our work</a>
+      </div>
+    </div>
+
+    <div class="footer">© <span id="y"></span> Amaya Built Co. LLC</div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
