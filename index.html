@@ -2,168 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Amaya Built Co. LLC</title>
-  <meta name="description" content="Concrete • Excavation • Flatwork • Foundations" />
-
-  <style>
-    :root{
-      --bg:#07080b;
-      --card:#0f1117;
-      --silver:#c9ced6;
-      --silver2:#aeb4be;
-      --line:rgba(201,206,214,.18);
-      --glow:rgba(201,206,214,.12);
-      --text:#f3f5f7;
-      --muted:#c9ced6cc;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background:
-        radial-gradient(1200px 600px at 50% -10%, rgba(201,206,214,.10), transparent 60%),
-        radial-gradient(900px 500px at 80% 15%, rgba(201,206,214,.08), transparent 55%),
-        radial-gradient(700px 400px at 15% 35%, rgba(201,206,214,.06), transparent 60%),
-        linear-gradient(180deg, #07080b 0%, #06070a 60%, #050609 100%);
-      color:var(--text);
-    }
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:1100px; margin:0 auto; padding:28px 18px 70px}
-
-    /* Header */
-    .topbar{
-      position:sticky; top:14px; z-index:50;
-      background:rgba(8,10,14,.62);
-      backdrop-filter: blur(12px);
-      border:1px solid var(--line);
-      border-radius:18px;
-      box-shadow: 0 12px 38px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.03) inset;
-      padding:14px 16px;
-      display:flex; align-items:center; gap:16px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      min-width:260px;
-    }
-    .brand .mark{
-      width:44px; height:44px; border-radius:12px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      display:grid; place-items:center;
-      overflow:hidden;
-    }
-    .brand .mark img{width:100%; height:100%; object-fit:cover}
-    .brand h1{
-      font-size:16px; margin:0; line-height:1.1; letter-spacing:.2px;
-    }
-    .brand p{
-      margin:2px 0 0; font-size:12px; color:var(--muted);
-    }
-    .nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
-    .nav a{
-      padding:10px 10px;
-      border-radius:12px;
-      color:var(--muted);
-      font-weight:600;
-      font-size:14px;
-    }
-    .nav a:hover{
-      color:var(--text);
-      background:rgba(255,255,255,.04);
-    }
-    .nav a.active{
-      color:var(--text);
-      background:rgba(255,255,255,.06);
-      border:1px solid var(--line);
-    }
-
-    /* Hero */
-    .hero{padding:44px 4px 10px}
-    .heroLogo{
-      display:flex;
-      justify-content:center;
-      margin:18px 0 22px;
-    }
-    .heroLogo img{
-      width:min(420px, 70vw);
-      height:auto;
-      filter: drop-shadow(0 20px 45px rgba(0,0,0,.55));
-    }
-    .headline{
-      font-size: clamp(42px, 6vw, 72px);
-      line-height:1.02;
-      margin:0 0 14px;
-      letter-spacing:-.02em;
-    }
-    .sub{
-      max-width:62ch;
-      color:var(--muted);
-      font-size:18px;
-      line-height:1.6;
-      margin:0 0 22px;
-    }
-    .btns{display:flex; gap:12px; flex-wrap:wrap}
-    .btn{
-      padding:12px 16px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      font-weight:700;
-    }
-    .btn:hover{background:rgba(255,255,255,.07)}
-    .btn.primary{
-      background:rgba(255,255,255,.08);
-      border-color:rgba(255,255,255,.16);
-    }
-
-    /* Cards */
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap:14px;
-      margin-top:26px;
-    }
-    .card{
-      background:rgba(15,17,23,.7);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:18px;
-      box-shadow: 0 18px 60px rgba(0,0,0,.35);
-    }
-    .card h3{margin:0 0 8px; font-size:16px}
-    .card p{margin:0; color:var(--muted); line-height:1.55}
-    @media (max-width: 900px){
-      .grid{grid-template-columns:1fr}
-      .brand{min-width:auto}
-    }
-
-    footer{
-      margin-top:44px;
-      color:rgba(201,206,214,.55);
-      font-size:12px;
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      border-top:1px solid var(--line);
-      padding-top:18px;
-    }
-  </style>
+  <meta name="description" content="Concrete • Excavation • Flatwork • Foundations — Lincoln, NE" />
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <div class="wrap">
-    <header class="topbar">
-      <a class="brand" href="index.html">
-        <span class="mark">
-          <img src="assets/logo.png" alt="Amaya Built Co. LLC" />
-        </span>
-        <span>
-          <h1>Amaya Built Co. LLC</h1>
-          <p>Concrete • Excavation • Flatwork • Foundations</p>
-        </span>
-      </a>
+
+  <div class="container topbar">
+    <div class="navShell">
+      <div class="brand">
+        <div class="name">Amaya Built Co. LLC</div>
+        <div class="tag">Concrete • Excavation • Flatwork • Foundations</div>
+      </div>
 
       <nav class="nav">
         <a class="active" href="index.html">Home</a>
@@ -172,46 +23,89 @@
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
-    </header>
+    </div>
+  </div>
 
-    <main class="hero">
-      <!-- BIG CENTER LOGO (Home only) -->
+  <div class="container">
+    <section class="hero">
       <div class="heroLogo">
-        <img src="assets/logo.png" alt="Amaya Built Co. LLC logo" />
+        <img src="assets/logo.png" alt="Amaya Built Co. LLC logo">
       </div>
 
-      <h2 class="headline">Professional concrete work.<br/>Built clean. Built right.</h2>
-      <p class="sub">
-        Amaya Built Co. LLC delivers modern, high-quality concrete and site work for both
-        residential and commercial clients. From slabs and flatwork to footings and foundations,
-        we show up prepared and finish strong.
-      </p>
+      <div class="heroGrid">
+        <div>
+          <h1 class="h1">Professional concrete work.<br>Built clean. Built right.</h1>
+          <p class="lead">
+            Amaya Built Co. LLC delivers modern, high-quality concrete and site work for both
+            residential and commercial clients in the Lincoln, NE area. From flatwork to footings,
+            we show up prepared and finish strong.
+          </p>
 
-      <div class="btns">
-        <a class="btn primary" href="contact.html">Request a Quote</a>
-        <a class="btn" href="projects.html">View Projects</a>
+          <div class="btnRow">
+            <a class="btn primary" href="contact.html">Request a Quote</a>
+            <a class="btn" href="projects.html">View Projects</a>
+          </div>
+
+          <div class="section">
+            <div class="grid3">
+              <div class="card">
+                <h3>Residential</h3>
+                <p>Driveways, patios, sidewalks, steps, garage slabs — clean edges and solid base prep.</p>
+              </div>
+              <div class="card">
+                <h3>Commercial</h3>
+                <p>Slabs, equipment pads, site concrete — delivered safely, on schedule, with clear communication.</p>
+              </div>
+              <div class="card">
+                <h3>Process</h3>
+                <p>Scope review → site prep → form & rebar → pour & finish → cleanup. No surprises.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2 class="sectionTitle">What we do</h2>
+            <div class="split">
+              <div class="card">
+                <h3>Flatwork & Slabs</h3>
+                <p>Driveways, walkways, patios, garage slabs, interior slabs, aprons, approaches.</p>
+              </div>
+              <div class="card">
+                <h3>Footings & Foundations</h3>
+                <p>Footings, walls, piers, pads and structural concrete scopes.</p>
+              </div>
+              <div class="card">
+                <h3>Excavation & Site Prep</h3>
+                <p>Grading, base material, demo, removals, and jobsite readiness.</p>
+              </div>
+              <div class="card">
+                <h3>Rebar & Formwork</h3>
+                <p>Proper layout, reinforcement, and clean form lines for a professional finish.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer">
+            © <span id="y"></span> Amaya Built Co. LLC • Lincoln, NE
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <h3>Service area</h3>
+            <p>Lincoln, NE + surrounding areas.</p>
+            <br>
+            <h3>Fast quote checklist</h3>
+            <p>
+              Send: address, photos, rough dimensions, timeline, and any plans or sketches.
+            </p>
+            <br>
+            <a class="btn" href="contact.html">Get a quote</a>
+          </div>
+        </div>
+
       </div>
-
-      <section class="grid" aria-label="Highlights">
-        <div class="card">
-          <h3>Residential</h3>
-          <p>Driveways, patios, sidewalks, steps, garage slabs, and additions—built with clean edges and proper base prep.</p>
-        </div>
-        <div class="card">
-          <h3>Commercial</h3>
-          <p>Slabs, flatwork, equipment pads, and site concrete—delivered safely, on schedule, with clear communication.</p>
-        </div>
-        <div class="card">
-          <h3>Process</h3>
-          <p>Scope review → site prep → form & rebar → pour & finish → cleanup. No surprises, just solid work.</p>
-        </div>
-      </section>
-
-      <footer>
-        <span>© <span id="y"></span> Amaya Built Co. LLC</span>
-        <span>Lincoln, NE • Serving surrounding areas</span>
-      </footer>
-    </main>
+    </section>
   </div>
 
   <script>
