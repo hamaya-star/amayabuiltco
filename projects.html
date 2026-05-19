@@ -1,70 +1,158 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Projects | Amaya Built Co. LLC</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Amaya Built Co.</title>
+
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+        body{background:#f5f5f5;color:#111;overflow-x:hidden;}
+
+        .navbar{position:absolute;top:0;width:100%;z-index:100;background:rgba(255,255,255,0.96);padding:25px 0;}
+        .nav-links{display:flex;justify-content:center;align-items:center;gap:55px;}
+        .nav-links a{text-decoration:none;color:#0b1633;font-size:14px;font-weight:700;letter-spacing:2px;}
+        .contact-btn{background:#0b1633;color:white!important;padding:18px 30px;}
+
+        .hero{position:relative;height:55vh;background:url('assets/image_4.png') center/cover no-repeat;display:flex;justify-content:center;align-items:center;text-align:center;}
+        .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);}
+        .hero-content{position:relative;z-index:2;color:white;padding:20px;}
+        .hero-content h1{font-size:5rem;font-weight:900;margin-bottom:15px;}
+        .hero-content p{font-size:1.2rem;max-width:760px;line-height:1.7;}
+
+        .projects-section{padding:90px 8%;}
+        .section-title{text-align:center;margin-bottom:55px;}
+        .section-title h2{font-size:3rem;color:#0b1633;margin-bottom:15px;}
+        .section-title p{color:#555;font-size:1.1rem;}
+
+        .project-card{background:white;margin-bottom:70px;box-shadow:0 15px 35px rgba(0,0,0,0.12);overflow:hidden;}
+        .project-info{padding:35px;}
+        .project-info h3{font-size:2.2rem;color:#0b1633;margin-bottom:10px;}
+        .project-info span{display:block;font-weight:700;color:#555;margin-bottom:15px;}
+        .project-info p{color:#555;line-height:1.7;}
+
+        .photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;padding:0 12px 12px;}
+        .photo-grid img{width:100%;height:260px;object-fit:cover;display:block;}
+
+        .cta{background:#0b1633;color:white;text-align:center;padding:90px 8%;}
+        .cta h2{font-size:3rem;margin-bottom:20px;}
+        .cta p{font-size:1.2rem;margin-bottom:35px;}
+        .cta a{display:inline-block;background:white;color:black;text-decoration:none;padding:18px 35px;font-weight:700;letter-spacing:1px;}
+
+        @media(max-width:900px){
+            .nav-links{gap:20px;flex-wrap:wrap;}
+            .hero-content h1{font-size:3.2rem;}
+            .project-info h3{font-size:1.8rem;}
+            .photo-grid img{height:220px;}
+        }
+    </style>
 </head>
+
 <body>
 
-  <div class="container topbar">
-    <div class="navShell">
-      <div class="brand">
-        <div class="name">Amaya Built Co. LLC</div>
-        <div class="tag">Concrete • Excavation • Flatwork • Foundations</div>
-      </div>
+<header class="navbar">
+    <nav class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="services.html">SERVICES</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html" class="contact-btn">CONTACT</a>
+    </nav>
+</header>
 
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a class="active" href="projects.html">Projects</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>OUR PROJECTS</h1>
+        <p>Real concrete, grading, demolition, rebar, and flatwork projects completed by Amaya Built Co.</p>
     </div>
-  </div>
+</section>
 
-  <div class="container">
-    <h1 class="h1" style="font-size:42px;margin-top:18px">Projects</h1>
-    <p class="lead">Add photos over time — we can build this into a clean gallery as you upload more work.</p>
+<section class="projects-section">
 
-    <div class="grid3">
-      <div class="card">
-        <h3>Driveway Replacement</h3>
-        <p>Demo → base → form/rebar → pour/finish. (Add photos + details.)</p>
-        <small>Lincoln, NE</small>
-      </div>
-      <div class="card">
-        <h3>Backyard Patio</h3>
-        <p>Clean layout, proper slope, sharp edges. (Add photos + details.)</p>
-        <small>Lincoln, NE</small>
-      </div>
-      <div class="card">
-        <h3>Commercial Pad</h3>
-        <p>Spec-driven reinforcement and finish. (Add photos + details.)</p>
-        <small>Lincoln, NE</small>
-      </div>
+    <div class="section-title">
+        <h2>Featured Work</h2>
+        <p>Browse our completed work by project and service type.</p>
     </div>
 
-    <div class="section">
-      <div class="card">
-        <h3>Want us to add photos?</h3>
-        <p>
-          Upload images into a folder like <b>assets/projects/</b> and we’ll plug them in with clean captions.
-        </p>
-        <div class="btnRow">
-          <a class="btn primary" href="contact.html">Request a Quote</a>
+    <div class="project-card">
+        <div class="project-info">
+            <h3>Residential Backyard Slab</h3>
+            <span>Crete, NE | Flatwork & Grading</span>
+            <p>Backyard concrete slab project including grading, preparation, forming, concrete placement, and finishing.</p>
         </div>
-      </div>
+        <div class="photo-grid">
+            <img src="assets/concrete4.jpg" alt="Residential backyard slab in Crete">
+            <img src="assets/concrete3.jpg" alt="Concrete flatwork project">
+            <img src="assets/concrete9.jpg" alt="Finished backyard slab">
+        </div>
     </div>
 
-    <div class="footer">© <span id="y"></span> Amaya Built Co. LLC</div>
-  </div>
+    <div class="project-card">
+        <div class="project-info">
+            <h3>Residential Driveway / Garage / Sidewalk</h3>
+            <span>Grand Island, NE | Flatwork, Rebar, Grading & Demolition</span>
+            <p>Residential concrete work including driveway, garage, sidewalk, demolition, grading, rebar installation, pour, and finish.</p>
+        </div>
+        <div class="photo-grid">
+            <img src="assets/concrete.jpg" alt="Concrete driveway project">
+            <img src="assets/concrete1.jpg" alt="Residential concrete work">
+            <img src="assets/concrete2.jpg" alt="Concrete placement">
+            <img src="assets/driveway.jpg" alt="Driveway concrete">
+            <img src="assets/driveway1.jpg" alt="Driveway project">
+            <img src="assets/finish.jpg" alt="Concrete finish">
+            <img src="assets/rebar.jpg" alt="Rebar installation">
+            <img src="assets/rebar1.jpg" alt="Concrete reinforcement">
+            <img src="assets/sidewalk.jpg" alt="Sidewalk concrete">
+        </div>
+    </div>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+    <div class="project-card">
+        <div class="project-info">
+            <h3>Residential Slab-On-Grade</h3>
+            <span>Wilber, NE | Residential Flatwork & Rebar</span>
+            <p>Residential slab-on-grade project with subgrade preparation, reinforcement, footing work, and concrete placement.</p>
+        </div>
+        <div class="photo-grid">
+            <img src="assets/concrete6.jpg" alt="Residential slab-on-grade">
+            <img src="assets/grade3.jpg" alt="Subgrade preparation">
+            <img src="assets/footing.jpg" alt="Footing work">
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-info">
+            <h3>Residential Backyard Slab</h3>
+            <span>Lincoln, NE | Flatwork & Grading</span>
+            <p>Backyard slab project including site grading, preparation, concrete placement, and clean finishing.</p>
+        </div>
+        <div class="photo-grid">
+            <img src="assets/concrete5.jpg" alt="Backyard slab in Lincoln">
+            <img src="assets/grade.jpg" alt="Grading work">
+            <img src="assets/grade2.jpg" alt="Site preparation">
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-info">
+            <h3>Residential Backyard Patio</h3>
+            <span>Wilber, NE | Flatwork, Grading & Demolition</span>
+            <p>Backyard patio project including demolition, grading, forming, concrete placement, and finished flatwork.</p>
+        </div>
+        <div class="photo-grid">
+            <img src="assets/concrete7.jpg" alt="Backyard patio project">
+            <img src="assets/concrete8.jpg" alt="Concrete patio work">
+            <img src="assets/concrete10.jpg" alt="Finished backyard patio">
+        </div>
+    </div>
+
+</section>
+
+<section class="cta">
+    <h2>Need Concrete Work Done?</h2>
+    <p>Contact Amaya Built Co. for concrete, grading, demolition, rebar, and flatwork services.</p>
+    <a href="contact.html">REQUEST A QUOTE</a>
+</section>
+
 </body>
 </html>
-
