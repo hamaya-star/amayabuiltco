@@ -1,70 +1,171 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About | Amaya Built Co. LLC</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Amaya Built Co.</title>
+
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+        body{background:#f5f5f5;color:#111;overflow-x:hidden;}
+
+        .navbar{position:absolute;top:0;width:100%;z-index:100;background:rgba(255,255,255,0.96);padding:25px 0;}
+        .nav-links{display:flex;justify-content:center;align-items:center;gap:55px;}
+        .nav-links a{text-decoration:none;color:#0b1633;font-size:14px;font-weight:700;letter-spacing:2px;}
+        .contact-btn{background:#0b1633;color:white!important;padding:18px 30px;}
+
+        .hero{position:relative;height:55vh;background:url('assets/image_4.png') center/cover no-repeat;display:flex;justify-content:center;align-items:center;text-align:center;}
+        .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.62);}
+        .hero-content{position:relative;z-index:2;color:white;padding:20px;max-width:900px;}
+        .hero-content h1{font-size:5rem;font-weight:900;margin-bottom:15px;}
+        .hero-content p{font-size:1.2rem;line-height:1.7;}
+
+        .about-section{padding:90px 8%;background:#f5f5f5;}
+        .about-container{max-width:1100px;margin:auto;}
+
+        .story-card{background:white;padding:50px;box-shadow:0 15px 35px rgba(0,0,0,0.12);margin-bottom:45px;}
+        .story-card h2{font-size:3rem;color:#0b1633;margin-bottom:25px;}
+        .story-card p{font-size:1.1rem;color:#555;line-height:1.8;margin-bottom:20px;}
+
+        .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:35px;margin-bottom:45px;}
+        .info-card{background:white;padding:40px;box-shadow:0 15px 35px rgba(0,0,0,0.12);}
+        .info-card h3{font-size:2rem;color:#0b1633;margin-bottom:20px;}
+        .info-card p{font-size:1.05rem;color:#555;line-height:1.8;}
+
+        .values{background:#0b1633;color:white;padding:70px 8%;text-align:center;}
+        .values h2{font-size:3rem;margin-bottom:35px;}
+        .values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;max-width:1100px;margin:auto;}
+        .value-box{border:1px solid rgba(255,255,255,0.25);padding:30px;}
+        .value-box h4{font-size:1.4rem;margin-bottom:12px;}
+        .value-box p{line-height:1.7;color:#d8d8d8;}
+
+        .cta{background:white;text-align:center;padding:90px 8%;}
+        .cta h2{font-size:3rem;color:#0b1633;margin-bottom:20px;}
+        .cta p{font-size:1.2rem;color:#555;margin-bottom:35px;line-height:1.7;}
+        .cta-buttons{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
+        .cta-buttons a{text-decoration:none;padding:18px 35px;font-weight:700;letter-spacing:1px;}
+        .cta-primary{background:#0b1633;color:white;}
+        .cta-secondary{border:2px solid #0b1633;color:#0b1633;}
+
+        @media(max-width:900px){
+            .nav-links{gap:20px;flex-wrap:wrap;}
+            .hero-content h1{font-size:3.2rem;}
+            .story-card{padding:35px 25px;}
+            .story-card h2,.values h2,.cta h2{font-size:2.3rem;}
+        }
+    </style>
 </head>
+
 <body>
 
-  <div class="container topbar">
-    <div class="navShell">
-      <div class="brand">
-        <div class="name">Amaya Built Co. LLC</div>
-        <div class="tag">Concrete • Excavation • Flatwork • Foundations</div>
-      </div>
+<header class="navbar">
+    <nav class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="services.html">SERVICES</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html" class="contact-btn">CONTACT</a>
+    </nav>
+</header>
 
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="projects.html">Projects</a>
-        <a class="active" href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>ABOUT US</h1>
+        <p>Built on family values, hard work, honest service, and concrete work made to last.</p>
     </div>
-  </div>
+</section>
 
-  <div class="container">
-    <h1 class="h1" style="font-size:42px;margin-top:18px">About</h1>
-    <p class="lead">
-      Amaya Built Co. LLC is a family-driven concrete company focused on doing the job right:
-      clean prep, strong reinforcement, professional finishes, and clear communication.
-    </p>
+<section class="about-section">
+    <div class="about-container">
 
-    <div class="split">
-      <div class="card">
-        <h3>What we believe</h3>
-        <p>
-          The best concrete work starts before the pour — layout, base, forms, and rebar.
-          We take pride in the details so the result lasts.
-        </p>
-      </div>
-      <div class="card">
-        <h3>What you can expect</h3>
-        <p>
-          Reliable scheduling, honest scope, clean job sites, and a finished product we’re proud to put our name on.
-        </p>
-      </div>
-    </div>
+        <div class="story-card">
+            <h2>Our Story</h2>
 
-    <div class="section">
-      <div class="card">
-        <h3>Serving</h3>
-        <p>Lincoln, NE and surrounding areas.</p>
-        <div class="btnRow">
-          <a class="btn primary" href="contact.html">Request a Quote</a>
-          <a class="btn" href="services.html">See Services</a>
+            <p>
+                Amaya Built Co. LLC was built by two brothers, Hector and Eduardo Amaya,
+                who grew up around concrete and construction their entire lives. Inspired
+                by their father’s work ethic as a concrete foreman in Mexico, they learned
+                early on the importance of quality work, honesty, and taking pride in their craft.
+            </p>
+
+            <p>
+                With backgrounds rooted in both hands-on concrete work and construction management,
+                Hector and Eduardo founded Amaya Built Co. with one goal — to deliver quality work,
+                honest service, and projects built to last.
+            </p>
+
+            <p>
+                Today, Amaya Built Co. proudly serves communities across Nebraska by delivering clean,
+                durable, and professional concrete work customers can rely on.
+            </p>
         </div>
-      </div>
+
+        <div class="info-grid">
+
+            <div class="info-card">
+                <h3>What We Believe</h3>
+                <p>
+                    At Amaya Built Co. LLC, we believe customers deserve a company they can trust
+                    to deliver quality work at a fair price. We value honesty and communication
+                    to ensure every client gets exactly what they envision for their project.
+                    We also believe in helping improve and strengthen the communities we serve.
+                    Most importantly, safety is the foundation of our company — making sure everyone
+                    returns home safely the same way they arrived on the job site.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>Why Customers Choose Us</h3>
+                <p>
+                    Customers choose Amaya Built Co. LLC because we believe our work is about more
+                    than just business. We focus on building strong relationships with our clients
+                    through honesty, communication, trust, and quality workmanship. We take pride
+                    in helping improve the communities we serve and creating lasting relationships
+                    with customers who share the same values.
+                </p>
+            </div>
+
+        </div>
+
     </div>
+</section>
 
-    <div class="footer">© <span id="y"></span> Amaya Built Co. LLC</div>
-  </div>
+<section class="values">
+    <h2>Built On The Right Values</h2>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+    <div class="values-grid">
+        <div class="value-box">
+            <h4>Quality</h4>
+            <p>Clean, durable concrete work completed with pride and attention to detail.</p>
+        </div>
+
+        <div class="value-box">
+            <h4>Honesty</h4>
+            <p>Clear communication, fair pricing, and upfront expectations from start to finish.</p>
+        </div>
+
+        <div class="value-box">
+            <h4>Safety</h4>
+            <p>Every project starts with the goal of everyone returning home safely.</p>
+        </div>
+
+        <div class="value-box">
+            <h4>Community</h4>
+            <p>We take pride in helping improve the Nebraska communities we serve.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Ready To Build With Us?</h2>
+    <p>Contact Amaya Built Co. for concrete, excavation, grading, and flatwork services across Nebraska.</p>
+
+    <div class="cta-buttons">
+        <a href="contact.html" class="cta-primary">REQUEST A QUOTE</a>
+        <a href="projects.html" class="cta-secondary">VIEW OUR WORK</a>
+    </div>
+</section>
+
 </body>
 </html>
-
