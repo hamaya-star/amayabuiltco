@@ -1,78 +1,161 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact | Amaya Built Co. LLC</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Amaya Built Co.</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+body{background:#f5f5f5;color:#111;overflow-x:hidden;}
+
+.navbar{position:absolute;top:0;width:100%;z-index:100;background:rgba(255,255,255,0.96);padding:25px 0;}
+.nav-links{display:flex;justify-content:center;align-items:center;gap:55px;}
+.nav-links a{text-decoration:none;color:#0b1633;font-size:14px;font-weight:700;letter-spacing:2px;}
+.contact-btn{background:#0b1633;color:white!important;padding:18px 30px;}
+
+.hero{position:relative;height:50vh;background:url('assets/image_4.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,0.62);}
+.hero-content{position:relative;z-index:2;color:white;padding:20px;}
+.hero-content h1{font-size:5rem;font-weight:900;margin-bottom:15px;}
+.hero-content p{font-size:1.2rem;line-height:1.7;}
+
+.contact-section{padding:90px 8%;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;}
+
+.form-card,.info-card{background:white;padding:45px;box-shadow:0 15px 35px rgba(0,0,0,0.12);}
+.form-card h2,.info-card h2{color:#0b1633;font-size:2rem;margin-bottom:20px;}
+
+label{display:block;margin-top:20px;margin-bottom:8px;font-weight:700;color:#0b1633;}
+input,textarea,select{
+    width:100%;
+    padding:16px;
+    border:1px solid #ccc;
+    font-size:16px;
+}
+textarea{height:160px;resize:vertical;}
+
+button{
+    margin-top:25px;
+    background:#0b1633;
+    color:white;
+    border:none;
+    padding:18px 35px;
+    font-weight:700;
+    letter-spacing:1px;
+    cursor:pointer;
+}
+
+.info-card p,.info-card li{color:#555;line-height:1.8;font-size:1.05rem;}
+.info-card ul{margin-left:20px;margin-top:15px;}
+.info-card a{color:#0b1633;font-weight:700;text-decoration:none;}
+
+.footer{background:#0b1633;color:white;text-align:center;padding:35px;}
+
+@media(max-width:900px){
+    .nav-links{gap:20px;flex-wrap:wrap;}
+    .hero-content h1{font-size:3.2rem;}
+    .contact-section{grid-template-columns:1fr;padding:60px 6%;}
+}
+</style>
 </head>
+
 <body>
 
-  <div class="container topbar">
-    <div class="navShell">
-      <div class="brand">
-        <div class="name">Amaya Built Co. LLC</div>
-        <div class="tag">Concrete • Excavation • Flatwork • Foundations</div>
-      </div>
+<header class="navbar">
+<nav class="nav-links">
+    <a href="index.html">HOME</a>
+    <a href="services.html">SERVICES</a>
+    <a href="projects.html">PROJECTS</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html" class="contact-btn">CONTACT</a>
+</nav>
+</header>
 
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html">About</a>
-        <a class="active" href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </div>
+<section class="hero">
+<div class="overlay"></div>
+<div class="hero-content">
+    <h1>CONTACT US</h1>
+    <p>Send us your project details and we’ll get back to you with the next steps.</p>
+</div>
+</section>
 
-  <div class="container">
-    <h1 class="h1" style="font-size:42px;margin-top:18px">Contact</h1>
-    <p class="lead">Send project details and we’ll get back to you with next steps.</p>
+<section class="contact-section">
 
-    <div class="split">
-      <div class="card">
-        <h3>Request a quote</h3>
+<div class="form-card">
+    <h2>Request A Quote</h2>
 
-        <!-- STATIC-SITE FRIENDLY: this opens the user's email app -->
-        <form action="mailto:hamaya@amayabuiltco.com?subject=Quote%20Request%20-%20Amaya%20Built%20Co" method="post" enctype="text/plain">
-          <div class="field">
-            <label>Your name</label>
-            <input name="Name" placeholder="Full name" required>
-          </div>
-          <div class="field">
-            <label>Phone</label>
-            <input name="Phone" placeholder="(###) ###-####">
-          </div>
-          <div class="field">
-            <label>Project address</label>
-            <input name="Address" placeholder="Street, City">
-          </div>
-          <div class="field">
-            <label>Details</label>
-            <textarea name="Details" placeholder="What are we building? Dimensions? Timeline?"></textarea>
-          </div>
-          <button class="btn primary" type="submit">Send Email</button>
-          <p><small>Tip: Include photos and rough dimensions for the fastest quote.</small></p>
-        </form>
-      </div>
+    <form action="https://formspree.io/f/mwvzpnkp" method="POST">
 
-      <div class="card">
-        <h3>Service area</h3>
-        <p>Lincoln, NE + surrounding areas.</p>
-        <br>
-        <h3>What to include</h3>
-        <p>• Address<br>• Photos<br>• Rough dimensions<br>• Desired timeline<br>• Any plan/sketch</p>
-        <br>
-        <a class="btn" href="projects.html">See our work</a>
-      </div>
-    </div>
+        <input type="hidden" name="_subject" value="New Quote Request - Amaya Built Co.">
 
-    <div class="footer">© <span id="y"></span> Amaya Built Co. LLC</div>
-  </div>
+        <label>Your Name</label>
+        <input type="text" name="name" placeholder="Full name" required>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Your email" required>
+
+        <label>Phone</label>
+        <input type="tel" name="phone" placeholder="(###) ###-####" required>
+
+        <label>Project Address</label>
+        <input type="text" name="project_address" placeholder="Street, City" required>
+
+        <label>Service Needed</label>
+        <select name="service_needed" required>
+            <option value="">Select a service</option>
+            <option>Driveway</option>
+            <option>Patio / Sidewalk</option>
+            <option>Garage / Slab-On-Grade</option>
+            <option>Commercial Flatwork</option>
+            <option>Excavation / Grading</option>
+            <option>Other</option>
+        </select>
+
+        <label>Project Details</label>
+        <textarea name="message" placeholder="Tell us what you’re building, rough dimensions, timeline, and any details." required></textarea>
+
+        <button type="submit">SEND REQUEST</button>
+
+    </form>
+</div>
+
+<div class="info-card">
+    <h2>What To Include</h2>
+    <p>For the fastest quote, please include:</p>
+
+    <ul>
+        <li>Project address</li>
+        <li>Photos of the area</li>
+        <li>Rough dimensions</li>
+        <li>Desired timeline</li>
+        <li>Any plan, sketch, or idea</li>
+    </ul>
+
+    <br>
+
+    <h2>Service Area</h2>
+    <p>Lincoln, Nebraska and surrounding areas.</p>
+
+    <br>
+
+    <h2>Email Us</h2>
+    <p>
+        <a href="mailto:hamaya@amayabuiltco.com,eamaya@amayabuiltco.com">
+            hamaya@amayabuiltco.com
+        </a>
+    </p>
+    <p>
+        <a href="mailto:eamaya@amayabuiltco.com">
+            eamaya@amayabuiltco.com
+        </a>
+    </p>
+</div>
+
+</section>
+
+<footer class="footer">
+    © 2026 Amaya Built Co. LLC
+</footer>
+
 </body>
 </html>
-
