@@ -3,136 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amaya Built Co. LLC | Concrete & Excavation Lincoln NE</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Amaya Built Co.</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:white;
+            overflow-x:hidden;
+        }
+
+        /* NAVBAR */
+
+        .navbar{
+            position:absolute;
+            top:0;
+            width:100%;
+            z-index:100;
+            background:rgba(255,255,255,0.96);
+            padding:25px 0;
+        }
+
+        .nav-links{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            gap:55px;
+        }
+
+        .nav-links a{
+            text-decoration:none;
+            color:#0b1633;
+            font-size:14px;
+            font-weight:700;
+            letter-spacing:2px;
+            transition:0.3s;
+        }
+
+        .nav-links a:hover{
+            opacity:0.7;
+        }
+
+        .contact-btn{
+            background:#0b1633;
+            color:white !important;
+            padding:18px 30px;
+        }
+
+        /* HERO */
+
+        .hero{
+            position:relative;
+            height:100vh;
+            background:url('assets/image_4.png') center center/cover no-repeat;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+        }
+
+        .overlay{
+            position:absolute;
+            inset:0;
+            background:rgba(0,0,0,0.5);
+        }
+
+        .hero-logo{
+            position:absolute;
+            top:90px;
+            width:280px;
+            z-index:2;
+        }
+
+        .hero-content{
+            position:relative;
+            z-index:2;
+            color:white;
+            max-width:1000px;
+            padding:20px;
+        }
+
+        .hero-content h1{
+            font-size:6rem;
+            font-weight:900;
+            line-height:0.95;
+            margin-top:180px;
+            margin-bottom:20px;
+        }
+
+        .hero-content h2{
+            font-size:2rem;
+            font-style:italic;
+            margin-bottom:30px;
+        }
+
+        .hero-content p{
+            font-size:1.2rem;
+            line-height:1.7;
+            margin-bottom:45px;
+        }
+
+        /* BUTTONS */
+
+        .hero-buttons{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .btn-primary{
+            background:white;
+            color:black;
+            padding:22px 40px;
+            text-decoration:none;
+            font-weight:700;
+            letter-spacing:1px;
+        }
+
+        .btn-secondary{
+            border:2px solid white;
+            color:white;
+            padding:22px 40px;
+            text-decoration:none;
+            font-weight:700;
+            letter-spacing:1px;
+        }
+
+        /* SERVICES */
+
+        .services{
+            padding:90px 8%;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:50px;
+            text-align:center;
+        }
+
+        .service-box{
+            padding:20px;
+        }
+
+        .service-box h3{
+            margin-top:20px;
+            margin-bottom:15px;
+            font-size:2rem;
+            color:#0b1633;
+        }
+
+        .service-box p{
+            color:#555;
+            line-height:1.7;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:900px){
+
+            .nav-links{
+                gap:20px;
+                flex-wrap:wrap;
+            }
+
+            .hero-logo{
+                width:190px;
+                top:120px;
+            }
+
+            .hero-content h1{
+                font-size:3.5rem;
+                margin-top:160px;
+            }
+
+            .hero-content h2{
+                font-size:1.3rem;
+            }
+
+            .hero-content p{
+                font-size:1rem;
+            }
+
+            .btn-primary,
+            .btn-secondary{
+                width:100%;
+                max-width:320px;
+            }
+
+        }
+
+    </style>
+
 </head>
-<body class="bg-white font-sans text-slate-900 leading-normal">
 
-    <nav class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-24 items-center">
-                <div class="flex items-center">
-                    <img src="assets/logo.png" alt="Amaya Built Co. LLC logo" class="h-16 w-auto mr-4">
-                    <div class="flex flex-col">
-                        <span class="font-black text-2xl md:text-3xl tracking-tighter leading-none text-slate-900 uppercase">AMAYA BUILT CO.</span>
-                        <span class="text-xs uppercase tracking-[0.3em] font-bold text-slate-500 mt-1">Concrete • Excavation • Flatwork</span>
-                    </div>
-                </div>
-                <div class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest text-slate-600">
-                    <a href="index.html" class="text-slate-900 border-b-2 border-slate-900">Home</a>
-                    <a href="services.html" class="hover:text-slate-900 transition">Services</a>
-                    <a href="projects.html" class="hover:text-slate-900 transition">Projects</a>
-                    <a href="about.html" class="hover:text-slate-900 transition">About</a>
-                    <a href="contact.html" class="bg-slate-900 text-white px-6 py-3 rounded-sm hover:bg-slate-800 transition">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+<body>
 
-   <header class="relative bg-slate-900 min-h-[70vh] flex items-center justify-center px-4 overflow-hidden">
-        
-        <div class="absolute inset-0 z-0">
-            <img src="assets/image_4.png" alt="Amaya Built Co. Job Site" class="w-full h-full object-cover opacity-40">
-            <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900/80"></div>
-        </div>
+    <!-- NAVBAR -->
 
-        <div class="relative z-10 max-w-5xl mx-auto text-center">
-            <h1 class="text-5xl md:text-8xl font-black mb-6 tracking-tighter leading-none text-white uppercase">
-                PROFESSIONAL<br>CONCRETE WORK.
-            </h1>
-            <p class="text-2xl md:text-4xl font-bold mb-10 text-slate-300 italic tracking-tight">
-                BUILT CLEAN. BUILT RIGHT.
-            </p>
-            <p class="text-lg md:text-xl mb-12 text-slate-400 max-w-2xl mx-auto font-medium">
-                Delivering high-quality concrete and site work for residential and commercial clients in the <span class="text-white underline decoration-slate-500">Lincoln, NE area</span>.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="contact.html" class="bg-white text-slate-950 px-12 py-5 rounded-sm font-black text-lg shadow-2xl hover:bg-slate-200 transition-all uppercase tracking-widest">
-                    Request a Quote
-                </a>
-                <a href="projects.html" class="bg-transparent border-2 border-white text-white px-12 py-5 rounded-sm font-black text-lg hover:bg-white/10 transition-all uppercase tracking-widest">
-                    View Our Work
-                </a>
-            </div>
-        </div>
+    <header class="navbar">
+
+        <nav class="nav-links">
+
+            <a href="index.html">HOME</a>
+            <a href="services.html">SERVICES</a>
+            <a href="projects.html">PROJECTS</a>
+            <a href="about.html">ABOUT</a>
+
+            <a href="contact.html" class="contact-btn">
+                CONTACT
+            </a>
+
+        </nav>
+
     </header>
 
-    <div class="bg-white border-b border-gray-200 py-12">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-            <div class="p-4">
-                <i class="fas fa-hammer text-slate-400 text-3xl mb-4"></i>
-                <h4 class="font-black text-lg uppercase tracking-widest text-slate-900">Residential</h4>
-                <p class="text-sm text-slate-500 mt-2">Driveways, patios, & custom sidewalks</p>
-            </div>
-            <div class="p-4 border-y md:border-y-0 md:border-x border-gray-100">
-                <i class="fas fa-building text-slate-400 text-3xl mb-4"></i>
-                <h4 class="font-black text-lg uppercase tracking-widest text-slate-900">Commercial</h4>
-                <p class="text-sm text-slate-500 mt-2">Slabs, equipment pads, & site concrete</p>
-            </div>
-            <div class="p-4">
-                <i class="fas fa-truck text-slate-400 text-3xl mb-4"></i>
-                <h4 class="font-black text-lg uppercase tracking-widest text-slate-900">Service Area</h4>
-                <p class="text-sm text-slate-500 mt-2">Lincoln & All Surrounding Counties</p>
-            </div>
-        </div>
-    </div>
+    <!-- HERO -->
 
-    <main class="py-24 max-w-7xl mx-auto px-4">
-        <div class="grid lg:grid-cols-3 gap-16">
-            
-            <div class="lg:col-span-2 space-y-16">
-                <div>
-                    <h2 class="text-4xl font-black uppercase tracking-tighter mb-4 text-slate-900">What We Do</h2>
-                    <div class="h-2 w-24 bg-slate-900 mb-12"></div>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-slate-50 p-8 border border-gray-200 hover:border-slate-900 transition-colors">
-                            <h3 class="font-black text-xl mb-3 uppercase tracking-tight">Flatwork & Slabs</h3>
-                            <p class="text-slate-600">Driveways, walkways, patios, garage slabs, interior slabs, aprons, and approaches.</p>
-                        </div>
-                        <div class="bg-slate-50 p-8 border border-gray-200 hover:border-slate-900 transition-colors">
-                            <h3 class="font-black text-xl mb-3 uppercase tracking-tight">Footings & Foundations</h3>
-                            <p class="text-slate-600">Structural footings, walls, piers, pads and structural concrete scopes.</p>
-                        </div>
-                        <div class="bg-slate-50 p-8 border border-gray-200 hover:border-slate-900 transition-colors">
-                            <h3 class="font-black text-xl mb-3 uppercase tracking-tight">Excavation & Site Prep</h3>
-                            <p class="text-slate-600">Grading, base material, demo, removals, and jobsite readiness.</p>
-                        </div>
-                        <div class="bg-slate-50 p-8 border border-gray-200 hover:border-slate-900 transition-colors">
-                            <h3 class="font-black text-xl mb-3 uppercase tracking-tight">Rebar & Formwork</h3>
-                            <p class="text-slate-600">Proper layout, reinforcement, and clean form lines for a professional finish.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="hero">
 
-            <div class="space-y-8">
-                <div class="bg-slate-900 text-white p-10 rounded-sm shadow-2xl">
-                    <h3 class="text-2xl font-black mb-6 border-b border-slate-700 pb-4 uppercase tracking-tight">Quote Checklist</h3>
-                    <ul class="space-y-4 mb-10 font-bold tracking-tight">
-                        <li class="flex items-center"><i class="fas fa-chevron-right text-slate-500 mr-3"></i> Project Address</li>
-                        <li class="flex items-center"><i class="fas fa-chevron-right text-slate-500 mr-3"></i> Current Photos</li>
-                        <li class="flex items-center"><i class="fas fa-chevron-right text-slate-500 mr-3"></i> Rough Dimensions</li>
-                        <li class="flex items-center"><i class="fas fa-chevron-right text-slate-500 mr-3"></i> Target Timeline</li>
-                    </ul>
-                    <a href="contact.html" class="block text-center bg-white text-slate-900 font-black py-4 rounded-sm transition hover:bg-gray-100 uppercase tracking-widest">Start Quote</a>
-                </div>
-            </div>
+        <div class="overlay"></div>
 
-        </div>
-    </main>
+        <img src="assets/logo.png" alt="Amaya Built Co Logo" class="hero-logo">
 
-    <footer class="bg-slate-50 border-t border-gray-200 py-16 text-center">
-        <div class="max-w-7xl mx-auto px-4">
-            <p class="text-slate-400 text-sm uppercase tracking-[0.4em] font-black">
-                © <span id="y"></span> Amaya Built Co. LLC • Lincoln, NE
+        <div class="hero-content">
+
+            <h1>
+                PROFESSIONAL<br>
+                CONCRETE WORK.
+            </h1>
+
+            <h2>
+                BUILT CLEAN. BUILT RIGHT.
+            </h2>
+
+            <p>
+                Delivering high-quality concrete and site work for residential and commercial clients in the Lincoln, NE area.
             </p>
-        </div>
-    </footer>
 
-    <script>
-        document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
+            <div class="hero-buttons">
+
+                <a href="contact.html" class="btn-primary">
+                    REQUEST A QUOTE
+                </a>
+
+                <a href="projects.html" class="btn-secondary">
+                    VIEW OUR WORK
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SERVICES -->
+
+    <section class="services">
+
+        <div class="service-box">
+
+            <h3>Residential</h3>
+
+            <p>
+                Driveways, patios, sidewalks, stamped concrete, and custom flatwork solutions.
+            </p>
+
+        </div>
+
+        <div class="service-box">
+
+            <h3>Commercial</h3>
+
+            <p>
+                Slabs, equipment pads, foundations, site concrete, excavation, and grading.
+            </p>
+
+        </div>
+
+        <div class="service-box">
+
+            <h3>Service Area</h3>
+
+            <p>
+                Proudly serving Lincoln, Nebraska and surrounding areas within a 55-mile radius.
+            </p>
+
+        </div>
+
+    </section>
+
 </body>
 </html>
