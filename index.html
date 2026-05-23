@@ -1,305 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amaya Built Co.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amaya Built Co.</title>
 
-    <link rel="stylesheet" href="style.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+body{background:white;overflow-x:hidden;color:#111;}
 
-    <style>
+.navbar{position:absolute;top:0;width:100%;z-index:100;background:rgba(255,255,255,.96);padding:25px 0;}
+.nav-links{display:flex;justify-content:center;align-items:center;gap:55px;}
+.nav-links a{text-decoration:none;color:#0b1633;font-size:14px;font-weight:700;letter-spacing:2px;}
+.contact-btn{background:#0b1633;color:white!important;padding:18px 30px;}
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, Helvetica, sans-serif;
-        }
+.hero{position:relative;height:80vh;background:url('assets/image_4.png') center/cover no-repeat;display:flex;justify-content:center;align-items:center;text-align:center;}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,.55);}
+.hero-content{position:relative;z-index:2;color:white;max-width:1000px;padding:20px;}
+.hero-content h1{font-size:4.3rem;font-weight:900;line-height:1;margin-bottom:20px;}
+.hero-content h2{font-size:1.8rem;font-style:italic;margin-bottom:25px;}
+.hero-content p{font-size:1.1rem;line-height:1.7;margin-bottom:40px;}
 
-        body{
-            background:white;
-            overflow-x:hidden;
-        }
+.hero-buttons{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
+.btn-primary,.btn-secondary{padding:20px 38px;text-decoration:none;font-weight:700;letter-spacing:1px;}
+.btn-primary{background:white;color:black;}
+.btn-secondary{border:2px solid white;color:white;}
 
-        /* NAVBAR */
+.logo-break{text-align:center;background:white;padding:45px 0 10px;}
+.logo-break img{width:260px;max-width:80%;}
 
-        .navbar{
-            position:absolute;
-            top:0;
-            width:100%;
-            z-index:100;
-            background:rgba(255,255,255,0.96);
-            padding:25px 0;
-        }
+.services{padding:55px 8% 90px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:50px;text-align:center;}
+.service-box h3{margin-bottom:15px;font-size:2.2rem;color:#0b1633;}
+.service-box p{color:#444;line-height:1.7;font-size:1.05rem;}
 
-        .nav-links{
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            gap:55px;
-        }
+.home-bottom{background:#0b1633;color:white;text-align:center;padding:80px 8%;}
+.home-bottom h2{font-size:3rem;margin-bottom:20px;}
+.home-bottom p{font-size:1.15rem;line-height:1.7;margin-bottom:35px;}
+.bottom-buttons{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
+.bottom-buttons a{text-decoration:none;padding:18px 35px;font-weight:700;letter-spacing:1px;}
+.bottom-primary{background:white;color:black;}
+.bottom-secondary{border:2px solid white;color:white;}
 
-        .nav-links a{
-            text-decoration:none;
-            color:#0b1633;
-            font-size:14px;
-            font-weight:700;
-            letter-spacing:2px;
-            transition:0.3s;
-        }
+.footer{background:#050914;color:white;text-align:center;padding:35px;}
+.footer a{color:white;font-weight:700;text-decoration:none;}
 
-        .nav-links a:hover{
-            opacity:0.7;
-        }
-
-        .contact-btn{
-            background:#0b1633;
-            color:white !important;
-            padding:18px 30px;
-        }
-
-        /* HERO */
-
-        .hero{
-            position:relative;
-            height:100vh;
-            background:url('assets/image_4.png') center center/cover no-repeat;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-        }
-
-        .overlay{
-            position:absolute;
-            inset:0;
-            background:rgba(0,0,0,0.5);
-        }
-
-       .hero-logo{
-    width:300px;
-    margin-bottom:35px;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    position:relative;
-    z-index:3;
-        }
-
-        .hero-content{
-            position:relative;
-            z-index:2;
-            color:white;
-            max-width:1000px;
-            padding:20px;
-        }
-
-       .hero-content h1{
-    font-size:4.8rem;
-    font-weight:900;
-    line-height:1;
-    margin-bottom:20px;
-           
-        }
-
-        .hero-content h2{
-            font-size:2rem;
-            font-style:italic;
-            margin-bottom:30px;
-        }
-
-        .hero-content p{
-            font-size:1.2rem;
-            line-height:1.7;
-            margin-bottom:45px;
-        }
-
-        /* BUTTONS */
-
-        .hero-buttons{
-            display:flex;
-            justify-content:center;
-            gap:20px;
-            flex-wrap:wrap;
-        }
-
-        .btn-primary{
-            background:white;
-            color:black;
-            padding:22px 40px;
-            text-decoration:none;
-            font-weight:700;
-            letter-spacing:1px;
-        }
-
-        .btn-secondary{
-            border:2px solid white;
-            color:white;
-            padding:22px 40px;
-            text-decoration:none;
-            font-weight:700;
-            letter-spacing:1px;
-        }
-
-        /* SERVICES */
-
-        .services{
-            padding:90px 8%;
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:50px;
-            text-align:center;
-        }
-
-        .service-box{
-            padding:20px;
-        }
-
-        .service-box h3{
-            margin-top:20px;
-            margin-bottom:15px;
-            font-size:2rem;
-            color:#0b1633;
-        }
-
-        .service-box p{
-            color:#555;
-            line-height:1.7;
-        }
-
-        /* MOBILE */
-
-        @media(max-width:900px){
-
-            .nav-links{
-                gap:20px;
-                flex-wrap:wrap;
-            }
-
-            .hero-logo{
-                width:190px;
-                top:120px;
-            }
-
-            .hero-content h1{
-                font-size:3.5rem;
-                margin-top:160px;
-            }
-
-            .hero-content h2{
-                font-size:1.3rem;
-            }
-
-            .hero-content p{
-                font-size:1rem;
-            }
-
-            .btn-primary,
-            .btn-secondary{
-                width:100%;
-                max-width:320px;
-            }
-
-        }
-
-    </style>
-
+@media(max-width:900px){
+    .nav-links{gap:20px;flex-wrap:wrap;}
+    .hero-content h1{font-size:2.8rem;}
+    .hero-content h2{font-size:1.25rem;}
+    .hero-content p{font-size:1rem;}
+    .btn-primary,.btn-secondary{width:100%;max-width:320px;}
+    .logo-break img{width:210px;}
+}
+</style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
+<header class="navbar">
+    <nav class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="services.html">SERVICES</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html" class="contact-btn">CONTACT</a>
+    </nav>
+</header>
 
-    <header class="navbar">
+<section class="hero">
+    <div class="overlay"></div>
 
-        <nav class="nav-links">
+    <div class="hero-content">
+        <h1>AMAYA BUILT CO. LLC</h1>
+        <h2>BUILT CLEAN. BUILT RIGHT.</h2>
 
-            <a href="index.html">HOME</a>
-            <a href="services.html">SERVICES</a>
-            <a href="projects.html">PROJECTS</a>
-            <a href="about.html">ABOUT</a>
+        <p>
+            Delivering high-quality concrete and site work for residential and commercial clients in the Lincoln, NE area.
+        </p>
 
-            <a href="contact.html" class="contact-btn">
-                CONTACT
-            </a>
-
-        </nav>
-
-    </header>
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-        <div class="overlay"></div>
-
-        <img src="assets/logo.png" alt="Amaya Built Co Logo" class="hero-logo">
-
-        <div class="hero-content">
-
-            <h1>
-                AMAYA BUILT CO. LLC
-            </h1>
-
-            <h2>
-                BUILT CLEAN. BUILT RIGHT.
-            </h2>
-
-            <p>
-                Delivering high-quality concrete and site work for residential and commercial clients in the Lincoln, NE area.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="contact.html" class="btn-primary">
-                    REQUEST A QUOTE
-                </a>
-
-                <a href="projects.html" class="btn-secondary">
-                    VIEW OUR WORK
-                </a>
-
-            </div>
-
+        <div class="hero-buttons">
+            <a href="contact.html" class="btn-primary">REQUEST A QUOTE</a>
+            <a href="projects.html" class="btn-secondary">VIEW OUR WORK</a>
         </div>
+    </div>
+</section>
 
-    </section>
+<section class="logo-break">
+    <img src="assets/logo.png" alt="Amaya Built Co. LLC Logo">
+</section>
 
-    <!-- SERVICES -->
+<section class="services">
+    <div class="service-box">
+        <h3>Residential</h3>
+        <p>Driveways, patios, sidewalks, stamped concrete, and custom flatwork solutions.</p>
+    </div>
 
-    <section class="services">
+    <div class="service-box">
+        <h3>Commercial</h3>
+        <p>Slabs, equipment pads, foundations, site concrete, excavation, and grading.</p>
+    </div>
 
-        <div class="service-box">
+    <div class="service-box">
+        <h3>Service Area</h3>
+        <p>Proudly serving Lincoln, Nebraska and surrounding areas within a 55-mile radius.</p>
+    </div>
+</section>
 
-            <h3>Residential</h3>
+<section class="home-bottom">
+    <h2>See Our Work</h2>
+    <p>
+        View completed concrete, grading, rebar, demolition, and flatwork projects by Amaya Built Co.
+    </p>
 
-            <p>
-                Driveways, patios, sidewalks, stamped concrete, and custom flatwork solutions.
-            </p>
+    <div class="bottom-buttons">
+        <a href="projects.html" class="bottom-primary">VIEW PROJECTS</a>
+        <a href="https://www.facebook.com/profile.php?id=61582590064498" target="_blank" class="bottom-secondary">VISIT FACEBOOK</a>
+    </div>
+</section>
 
-        </div>
-
-        <div class="service-box">
-
-            <h3>Commercial</h3>
-
-            <p>
-                Slabs, equipment pads, foundations, site concrete, excavation, and grading.
-            </p>
-
-        </div>
-
-        <div class="service-box">
-
-            <h3>Service Area</h3>
-
-            <p>
-                Proudly serving Lincoln, Nebraska and surrounding areas within a 55-mile radius.
-            </p>
-
-        </div>
-
-    </section>
+<footer class="footer">
+    © 2026 Amaya Built Co. LLC | 
+    <a href="https://www.facebook.com/profile.php?id=61582590064498" target="_blank">Facebook</a>
+</footer>
 
 </body>
 </html>
