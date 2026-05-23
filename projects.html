@@ -1,158 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Amaya Built Co.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Amaya Built Co.</title>
 
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
-        body{background:#f5f5f5;color:#111;overflow-x:hidden;}
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+body{background:#f5f5f5;color:#111;overflow-x:hidden;}
 
-        .navbar{position:absolute;top:0;width:100%;z-index:100;background:rgba(255,255,255,0.96);padding:25px 0;}
-        .nav-links{display:flex;justify-content:center;align-items:center;gap:55px;}
-        .nav-links a{text-decoration:none;color:#0b1633;font-size:14px;font-weight:700;letter-spacing:2px;}
-        .contact-btn{background:#0b1633;color:white!important;padding:18px 30px;}
+.navbar{position:absolute;top:0;width:100%;z-index:100;background:rgba(255,255,255,0.96);padding:25px 0;}
+.nav-links{display:flex;justify-content:center;align-items:center;gap:55px;}
+.nav-links a{text-decoration:none;color:#0b1633;font-size:14px;font-weight:700;letter-spacing:2px;}
+.contact-btn{background:#0b1633;color:white!important;padding:18px 30px;}
 
-        .hero{position:relative;height:55vh;background:url('assets/image_4.png') center/cover no-repeat;display:flex;justify-content:center;align-items:center;text-align:center;}
-        .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);}
-        .hero-content{position:relative;z-index:2;color:white;padding:20px;}
-        .hero-content h1{font-size:5rem;font-weight:900;margin-bottom:15px;}
-        .hero-content p{font-size:1.2rem;max-width:760px;line-height:1.7;}
+.hero{position:relative;height:55vh;background:url('assets/image_4.png') center/cover no-repeat;display:flex;justify-content:center;align-items:center;text-align:center;}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);}
+.hero-content{position:relative;z-index:2;color:white;padding:20px;}
+.hero-content h1{font-size:5rem;font-weight:900;margin-bottom:15px;}
+.hero-content p{font-size:1.2rem;max-width:760px;line-height:1.7;}
 
-        .projects-section{padding:90px 8%;}
-        .section-title{text-align:center;margin-bottom:55px;}
-        .section-title h2{font-size:3rem;color:#0b1633;margin-bottom:15px;}
-        .section-title p{color:#555;font-size:1.1rem;}
+.projects-section{padding:90px 8%;}
+.section-title{text-align:center;margin-bottom:55px;}
+.section-title h2{font-size:3rem;color:#0b1633;margin-bottom:15px;}
+.section-title p{color:#555;font-size:1.1rem;}
 
-        .project-card{background:white;margin-bottom:70px;box-shadow:0 15px 35px rgba(0,0,0,0.12);overflow:hidden;}
-        .project-info{padding:35px;}
-        .project-info h3{font-size:2.2rem;color:#0b1633;margin-bottom:10px;}
-        .project-info span{display:block;font-weight:700;color:#555;margin-bottom:15px;}
-        .project-info p{color:#555;line-height:1.7;}
+.project-card{background:white;margin-bottom:70px;box-shadow:0 15px 35px rgba(0,0,0,0.12);overflow:hidden;}
+.project-info{padding:35px;}
+.project-info h3{font-size:2.2rem;color:#0b1633;margin-bottom:10px;}
+.project-info span{display:block;font-weight:700;color:#555;margin-bottom:15px;}
+.project-info p{color:#555;line-height:1.7;}
 
-        .photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;padding:0 12px 12px;}
-        .photo-grid img{width:100%;height:260px;object-fit:cover;display:block;}
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;padding:0 12px 12px;}
+.photo-grid img{width:100%;height:260px;object-fit:cover;display:block;cursor:pointer;transition:.3s;}
+.photo-grid img:hover{opacity:.85;transform:scale(1.01);}
 
-        .cta{background:#0b1633;color:white;text-align:center;padding:90px 8%;}
-        .cta h2{font-size:3rem;margin-bottom:20px;}
-        .cta p{font-size:1.2rem;margin-bottom:35px;}
-        .cta a{display:inline-block;background:white;color:black;text-decoration:none;padding:18px 35px;font-weight:700;letter-spacing:1px;}
+.cta{background:#0b1633;color:white;text-align:center;padding:90px 8%;}
+.cta h2{font-size:3rem;margin-bottom:20px;}
+.cta p{font-size:1.2rem;margin-bottom:35px;}
+.cta a{display:inline-block;background:white;color:black;text-decoration:none;padding:18px 35px;font-weight:700;letter-spacing:1px;}
 
-        @media(max-width:900px){
-            .nav-links{gap:20px;flex-wrap:wrap;}
-            .hero-content h1{font-size:3.2rem;}
-            .project-info h3{font-size:1.8rem;}
-            .photo-grid img{height:220px;}
-        }
-    </style>
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;justify-content:center;align-items:center;}
+.lightbox img{max-width:90%;max-height:85%;object-fit:contain;}
+.close{position:absolute;top:25px;right:40px;color:white;font-size:45px;cursor:pointer;}
+.prev,.next{position:absolute;top:50%;transform:translateY(-50%);background:white;border:none;font-size:35px;padding:15px 22px;cursor:pointer;}
+.prev{left:35px;}
+.next{right:35px;}
+
+@media(max-width:900px){
+    .nav-links{gap:20px;flex-wrap:wrap;}
+    .hero-content h1{font-size:3.2rem;}
+    .project-info h3{font-size:1.8rem;}
+    .photo-grid img{height:220px;}
+    .prev,.next{font-size:25px;padding:10px 15px;}
+    .prev{left:10px;}
+    .next{right:10px;}
+}
+</style>
 </head>
 
 <body>
 
 <header class="navbar">
-    <nav class="nav-links">
-        <a href="index.html">HOME</a>
-        <a href="services.html">SERVICES</a>
-        <a href="projects.html">PROJECTS</a>
-        <a href="about.html">ABOUT</a>
-        <a href="contact.html" class="contact-btn">CONTACT</a>
-    </nav>
+<nav class="nav-links">
+    <a href="index.html">HOME</a>
+    <a href="services.html">SERVICES</a>
+    <a href="projects.html">PROJECTS</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html" class="contact-btn">CONTACT</a>
+</nav>
 </header>
 
 <section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-        <h1>OUR PROJECTS</h1>
-        <p>Real concrete, grading, demolition, rebar, and flatwork projects completed by Amaya Built Co.</p>
-    </div>
+<div class="overlay"></div>
+<div class="hero-content">
+    <h1>OUR PROJECTS</h1>
+    <p>Real concrete, grading, demolition, rebar, and flatwork projects completed by Amaya Built Co.</p>
+</div>
 </section>
 
 <section class="projects-section">
 
-    <div class="section-title">
-        <h2>Featured Work</h2>
-        <p>Browse our completed work by project and service type.</p>
-    </div>
+<div class="section-title">
+    <h2>Featured Work</h2>
+    <p>Click any photo to view the full project gallery.</p>
+</div>
 
-    <div class="project-card">
-        <div class="project-info">
-            <h3>Residential Backyard Slab</h3>
-            <span>Crete, NE | Flatwork & Grading</span>
-            <p>Backyard concrete slab project including grading, preparation, forming, concrete placement, and finishing.</p>
-        </div>
-        <div class="photo-grid">
-            <img src="assets/concrete4.jpg" alt="Residential backyard slab in Crete">
-            <img src="assets/concrete3.jpg" alt="Concrete flatwork project">
-            <img src="assets/concrete9.jpg" alt="Finished backyard slab">
-        </div>
+<div class="project-card">
+    <div class="project-info">
+        <h3>Residential Backyard Slab</h3>
+        <span>Crete, NE | Flatwork & Grading</span>
+        <p>Backyard concrete slab project including grading, preparation, forming, concrete placement, and finishing.</p>
     </div>
+    <div class="photo-grid">
+        <img src="assets/concrete4.jpg" onclick="openLightbox(creteSlab,0)" alt="Residential backyard slab">
+        <img src="assets/concrete3.jpg" onclick="openLightbox(creteSlab,1)" alt="Concrete flatwork project">
+        <img src="assets/concrete9.jpg" onclick="openLightbox(creteSlab,2)" alt="Finished backyard slab">
+    </div>
+</div>
 
-    <div class="project-card">
-        <div class="project-info">
-            <h3>Residential Driveway / Garage / Sidewalk</h3>
-            <span>Grand Island, NE | Flatwork, Rebar, Grading & Demolition</span>
-            <p>Residential concrete work including driveway, garage, sidewalk, demolition, grading, rebar installation, pour, and finish.</p>
-        </div>
-        <div class="photo-grid">
-            <img src="assets/concrete.jpg" alt="Concrete driveway project">
-            <img src="assets/concrete1.jpg" alt="Residential concrete work">
-            <img src="assets/concrete2.jpg" alt="Concrete placement">
-            <img src="assets/driveway.jpg" alt="Driveway concrete">
-            <img src="assets/driveway1.jpg" alt="Driveway project">
-            <img src="assets/finish.jpg" alt="Concrete finish">
-            <img src="assets/rebar.jpg" alt="Rebar installation">
-            <img src="assets/rebar1.jpg" alt="Concrete reinforcement">
-            <img src="assets/sidewalk.jpg" alt="Sidewalk concrete">
-        </div>
+<div class="project-card">
+    <div class="project-info">
+        <h3>Residential Driveway / Garage / Sidewalk</h3>
+        <span>Grand Island, NE | Flatwork, Rebar, Grading & Demolition</span>
+        <p>Residential concrete work including driveway, garage, sidewalk, demolition, grading, rebar installation, pour, and finish.</p>
     </div>
+    <div class="photo-grid">
+        <img src="assets/concrete.jpg" onclick="openLightbox(grandIsland,0)" alt="Concrete driveway project">
+        <img src="assets/concrete1.jpg" onclick="openLightbox(grandIsland,1)" alt="Residential concrete work">
+        <img src="assets/concrete2.jpg" onclick="openLightbox(grandIsland,2)" alt="Concrete placement">
+        <img src="assets/driveway.jpg" onclick="openLightbox(grandIsland,3)" alt="Driveway concrete">
+        <img src="assets/driveway1.jpg" onclick="openLightbox(grandIsland,4)" alt="Driveway project">
+        <img src="assets/finish.jpg" onclick="openLightbox(grandIsland,5)" alt="Concrete finish">
+        <img src="assets/rebar.jpg" onclick="openLightbox(grandIsland,6)" alt="Rebar installation">
+        <img src="assets/rebar1.jpg" onclick="openLightbox(grandIsland,7)" alt="Concrete reinforcement">
+        <img src="assets/sidewalk.jpg" onclick="openLightbox(grandIsland,8)" alt="Sidewalk concrete">
+    </div>
+</div>
 
-    <div class="project-card">
-        <div class="project-info">
-            <h3>Residential Slab-On-Grade</h3>
-            <span>Wilber, NE | Residential Flatwork & Rebar</span>
-            <p>Residential slab-on-grade project with subgrade preparation, reinforcement, footing work, and concrete placement.</p>
-        </div>
-        <div class="photo-grid">
-            <img src="assets/concrete6.jpg" alt="Residential slab-on-grade">
-            <img src="assets/grade3.jpg" alt="Subgrade preparation">
-            <img src="assets/footing.jpg" alt="Footing work">
-        </div>
+<div class="project-card">
+    <div class="project-info">
+        <h3>Residential Slab-On-Grade</h3>
+        <span>Wilber, NE | Residential Flatwork & Rebar</span>
+        <p>Residential slab-on-grade project with subgrade preparation, reinforcement, footing work, and concrete placement.</p>
     </div>
+    <div class="photo-grid">
+        <img src="assets/concrete6.jpg" onclick="openLightbox(wilberSlab,0)" alt="Residential slab-on-grade">
+        <img src="assets/grade3.jpg" onclick="openLightbox(wilberSlab,1)" alt="Subgrade preparation">
+        <img src="assets/footing.jpg" onclick="openLightbox(wilberSlab,2)" alt="Footing work">
+    </div>
+</div>
 
-    <div class="project-card">
-        <div class="project-info">
-            <h3>Residential Backyard Slab</h3>
-            <span>Lincoln, NE | Flatwork & Grading</span>
-            <p>Backyard slab project including site grading, preparation, concrete placement, and clean finishing.</p>
-        </div>
-        <div class="photo-grid">
-            <img src="assets/concrete5.jpg" alt="Backyard slab in Lincoln">
-            <img src="assets/grade.jpg" alt="Grading work">
-            <img src="assets/grade2.jpg" alt="Site preparation">
-        </div>
+<div class="project-card">
+    <div class="project-info">
+        <h3>Residential Backyard Slab</h3>
+        <span>Lincoln, NE | Flatwork & Grading</span>
+        <p>Backyard slab project including site grading, preparation, concrete placement, and clean finishing.</p>
     </div>
+    <div class="photo-grid">
+        <img src="assets/concrete5.jpg" onclick="openLightbox(lincolnSlab,0)" alt="Backyard slab in Lincoln">
+        <img src="assets/grade.jpg" onclick="openLightbox(lincolnSlab,1)" alt="Grading work">
+        <img src="assets/grade2.jpg" onclick="openLightbox(lincolnSlab,2)" alt="Site preparation">
+    </div>
+</div>
 
-    <div class="project-card">
-        <div class="project-info">
-            <h3>Residential Backyard Patio</h3>
-            <span>Wilber, NE | Flatwork, Grading & Demolition</span>
-            <p>Backyard patio project including demolition, grading, forming, concrete placement, and finished flatwork.</p>
-        </div>
-        <div class="photo-grid">
-            <img src="assets/concrete7.jpg" alt="Backyard patio project">
-            <img src="assets/concrete8.jpg" alt="Concrete patio work">
-            <img src="assets/concrete10.jpg" alt="Finished backyard patio">
-        </div>
+<div class="project-card">
+    <div class="project-info">
+        <h3>Residential Backyard Patio</h3>
+        <span>Wilber, NE | Flatwork, Grading & Demolition</span>
+        <p>Backyard patio project including demolition, grading, forming, concrete placement, and finished flatwork.</p>
     </div>
+    <div class="photo-grid">
+        <img src="assets/concrete7.jpg" onclick="openLightbox(wilberPatio,0)" alt="Backyard patio project">
+        <img src="assets/concrete8.jpg" onclick="openLightbox(wilberPatio,1)" alt="Concrete patio work">
+        <img src="assets/concrete10.jpg" onclick="openLightbox(wilberPatio,2)" alt="Finished backyard patio">
+    </div>
+</div>
 
 </section>
 
 <section class="cta">
-    <h2>Need Concrete Work Done?</h2>
-    <p>Contact Amaya Built Co. for concrete, grading, demolition, rebar, and flatwork services.</p>
-    <a href="contact.html">REQUEST A QUOTE</a>
+<h2>Need Concrete Work Done?</h2>
+<p>Contact Amaya Built Co. for concrete, grading, demolition, rebar, and flatwork services.</p>
+<a href="contact.html">REQUEST A QUOTE</a>
 </section>
+
+<div id="lightbox" class="lightbox">
+<span class="close" onclick="closeLightbox()">×</span>
+<button class="prev" onclick="changePhoto(-1)">❮</button>
+<img id="lightbox-img" src="" alt="Project photo">
+<button class="next" onclick="changePhoto(1)">❯</button>
+</div>
+
+<script>
+const creteSlab = [
+    "assets/concrete4.jpg",
+    "assets/concrete3.jpg",
+    "assets/concrete9.jpg"
+];
+
+const grandIsland = [
+    "assets/concrete.jpg",
+    "assets/concrete1.jpg",
+    "assets/concrete2.jpg",
+    "assets/driveway.jpg",
+    "assets/driveway1.jpg",
+    "assets/finish.jpg",
+    "assets/rebar.jpg",
+    "assets/rebar1.jpg",
+    "assets/sidewalk.jpg"
+];
+
+const wilberSlab = [
+    "assets/concrete6.jpg",
+    "assets/grade3.jpg",
+    "assets/footing.jpg"
+];
+
+const lincolnSlab = [
+    "assets/concrete5.jpg",
+    "assets/grade.jpg",
+    "assets/grade2.jpg"
+];
+
+const wilberPatio = [
+    "assets/concrete7.jpg",
+    "assets/concrete8.jpg",
+    "assets/concrete10.jpg"
+];
+
+let currentPhotos = [];
+let currentIndex = 0;
+
+function openLightbox(images, index){
+    currentPhotos = images;
+    currentIndex = index;
+    document.getElementById("lightbox-img").src = currentPhotos[currentIndex];
+    document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox(){
+    document.getElementById("lightbox").style.display = "none";
+}
+
+function changePhoto(direction){
+    currentIndex += direction;
+
+    if(currentIndex < 0){
+        currentIndex = currentPhotos.length - 1;
+    }
+
+    if(currentIndex >= currentPhotos.length){
+        currentIndex = 0;
+    }
+
+    document.getElementById("lightbox-img").src = currentPhotos[currentIndex];
+}
+
+document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){
+        closeLightbox();
+    }
+    if(e.key === "ArrowLeft"){
+        changePhoto(-1);
+    }
+    if(e.key === "ArrowRight"){
+        changePhoto(1);
+    }
+});
+</script>
 
 </body>
 </html>
