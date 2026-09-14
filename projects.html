@@ -184,17 +184,29 @@ body{
 
 
 /* =========================
-   SMALLER PHOTO GRID
-   Grand Island + Wilber SOG
+   COMPACT PHOTO GALLERY
+
+   Used ONLY for:
+   - Grand Island
+   - Wilber Slab-On-Grade
 ========================= */
 
 .photo-grid.compact-gallery{
-    grid-template-columns:repeat(auto-fill, minmax(165px, 1fr));
-    gap:10px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    padding:0 12px 12px;
+    align-items:flex-start;
+    justify-content:flex-start;
 }
 
 .photo-grid.compact-gallery img{
-    height:175px;
+    width:300px !important;
+    height:215px !important;
+    flex:0 0 300px;
+    object-fit:cover;
+    display:block;
+    cursor:pointer;
 }
 
 
@@ -304,11 +316,15 @@ body{
     }
 
     .photo-grid.compact-gallery{
-        grid-template-columns:repeat(2, 1fr);
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
     }
 
     .photo-grid.compact-gallery img{
-        height:160px;
+        width:100% !important;
+        height:170px !important;
+        flex:none;
     }
 
     .prev,
@@ -326,10 +342,20 @@ body{
     }
 }
 
+@media(max-width:550px){
+
+    .photo-grid.compact-gallery{
+        grid-template-columns:1fr;
+    }
+
+    .photo-grid.compact-gallery img{
+        height:220px !important;
+    }
+}
+
 </style>
 
 </head>
-
 
 <body>
 
@@ -438,7 +464,7 @@ body{
 
 <!-- ======================================================
      GRAND ISLAND
-     SMALLER PHOTOS
+     COMPACT GALLERY
 ====================================================== -->
 
 <div class="project-card">
@@ -447,7 +473,9 @@ body{
 
         <h3>Residential Driveway / Garage / Sidewalk</h3>
 
-        <span>Grand Island, NE | Flatwork, Rebar, Grading & Demolition</span>
+        <span>
+            Grand Island, NE | Flatwork, Rebar, Grading & Demolition
+        </span>
 
         <p>
             Residential concrete work including driveway, garage, sidewalk,
@@ -502,7 +530,7 @@ body{
 
 <!-- ======================================================
      WILBER SLAB-ON-GRADE
-     SMALLER PHOTOS
+     COMPACT GALLERY
 ====================================================== -->
 
 <div class="project-card">
@@ -578,7 +606,7 @@ body{
 
 
 <!-- ======================================================
-     WILBER PATIO
+     WILBER BACKYARD PATIO
 ====================================================== -->
 
 <div class="project-card">
@@ -616,7 +644,7 @@ body{
 
 
 <!-- ======================================================
-     RESIDENTIAL DRIVEWAY RENOVATION
+     LINCOLN DRIVEWAY RENOVATION
 ====================================================== -->
 
 <div class="project-card">
@@ -628,9 +656,9 @@ body{
         <span>Lincoln, NE | Demolition & Flatwork</span>
 
         <p>
-            Residential driveway renovation including demolition of existing concrete,
-            site preparation, forming, concrete placement, finishing, and expansion
-            of the existing driveway.
+            Residential driveway renovation including demolition of existing
+            concrete, site preparation, forming, concrete placement, finishing,
+            and expansion of the existing driveway.
         </p>
 
     </div>
@@ -727,7 +755,9 @@ body{
 
         <h3>Garage Slab Replacement & Spread Footings</h3>
 
-        <span>Bellevue, NE | Demolition, Footings, Rebar & Flatwork</span>
+        <span>
+            Bellevue, NE | Demolition, Footings, Rebar & Flatwork
+        </span>
 
         <p>
             Residential garage slab replacement including demolition,
@@ -793,7 +823,7 @@ body{
 
 
 <!-- =========================
-     CTA
+     CALL TO ACTION
 ========================= -->
 
 <section class="cta">
@@ -836,6 +866,8 @@ body{
 <script>
 
 
+/* CRETE */
+
 const creteSlab = [
     "assets/concrete4.jpg",
     "assets/concrete3.jpg",
@@ -844,6 +876,8 @@ const creteSlab = [
     "assets/crete-backyard-5.jpg"
 ];
 
+
+/* GRAND ISLAND */
 
 const grandIsland = [
     "assets/concrete.jpg",
@@ -858,12 +892,16 @@ const grandIsland = [
 ];
 
 
+/* WILBER SLAB */
+
 const wilberSlab = [
     "assets/concrete6.jpg",
     "assets/grade3.jpg",
     "assets/footing.jpg"
 ];
 
+
+/* LINCOLN BACKYARD SLAB */
 
 const lincolnSlab = [
     "assets/concrete5.jpg",
@@ -872,12 +910,16 @@ const lincolnSlab = [
 ];
 
 
+/* WILBER PATIO */
+
 const wilberPatio = [
     "assets/concrete7.jpg",
     "assets/concrete8.jpg",
     "assets/concrete10.jpg"
 ];
 
+
+/* LINCOLN DRIVEWAY RENOVATION */
 
 const karenDriveway = [
     "assets/Karen%27s%20Uncle%20-%201.jpg",
@@ -889,6 +931,8 @@ const karenDriveway = [
 ];
 
 
+/* DIANA FURST */
+
 const dianaFurst = [
     "assets/D.F-1.jpg",
     "assets/D.F-2.jpg",
@@ -898,6 +942,8 @@ const dianaFurst = [
     "assets/D.F-6.jpg"
 ];
 
+
+/* DANIEL PARIS */
 
 const danielParis = [
     "assets/DP-1.jpg",
@@ -932,6 +978,8 @@ function openLightbox(images,index){
 
     document.getElementById("lightbox").style.display =
         "flex";
+
+    document.body.style.overflow = "hidden";
 }
 
 
@@ -939,6 +987,8 @@ function closeLightbox(){
 
     document.getElementById("lightbox").style.display =
         "none";
+
+    document.body.style.overflow = "";
 }
 
 
@@ -989,7 +1039,7 @@ document.addEventListener("keydown",function(e){
 });
 
 
-/* CLICK BACKGROUND TO CLOSE */
+/* CLICK OUTSIDE IMAGE TO CLOSE */
 
 document.getElementById("lightbox").addEventListener(
     "click",
