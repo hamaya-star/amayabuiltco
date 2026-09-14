@@ -158,7 +158,7 @@ body{
 
 
 /* =========================
-   PHOTO GRID
+   NORMAL PHOTO GRID
 ========================= */
 
 .photo-grid{
@@ -180,6 +180,21 @@ body{
 .photo-grid img:hover{
     opacity:0.85;
     transform:scale(1.01);
+}
+
+
+/* =========================
+   SMALLER PHOTO GRID
+   Grand Island + Wilber SOG
+========================= */
+
+.photo-grid.compact-gallery{
+    grid-template-columns:repeat(auto-fill, minmax(165px, 1fr));
+    gap:10px;
+}
+
+.photo-grid.compact-gallery img{
+    height:175px;
 }
 
 
@@ -288,6 +303,14 @@ body{
         height:220px;
     }
 
+    .photo-grid.compact-gallery{
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+    .photo-grid.compact-gallery img{
+        height:160px;
+    }
+
     .prev,
     .next{
         font-size:25px;
@@ -306,6 +329,7 @@ body{
 </style>
 
 </head>
+
 
 <body>
 
@@ -414,6 +438,7 @@ body{
 
 <!-- ======================================================
      GRAND ISLAND
+     SMALLER PHOTOS
 ====================================================== -->
 
 <div class="project-card">
@@ -432,7 +457,7 @@ body{
 
     </div>
 
-    <div class="">
+    <div class="photo-grid compact-gallery">
 
         <img src="assets/concrete.jpg"
              onclick="openLightbox(grandIsland,0)"
@@ -476,7 +501,8 @@ body{
 
 
 <!-- ======================================================
-     WILBER SLAB
+     WILBER SLAB-ON-GRADE
+     SMALLER PHOTOS
 ====================================================== -->
 
 <div class="project-card">
@@ -494,7 +520,7 @@ body{
 
     </div>
 
-    <div class="">
+    <div class="photo-grid compact-gallery">
 
         <img src="assets/concrete6.jpg"
              onclick="openLightbox(wilberSlab,0)"
@@ -609,31 +635,33 @@ body{
 
     </div>
 
-<div class="photo-grid">
+    <div class="photo-grid">
 
-    <img src="assets/karen-driveway-1.jpg"
-         onclick="openLightbox(karenDriveway,0)"
-         alt="Residential driveway renovation">
+        <img src="assets/Karen%27s%20Uncle%20-%201.jpg"
+             onclick="openLightbox(karenDriveway,0)"
+             alt="Residential driveway renovation">
 
-    <img src="assets/karen-driveway-2.jpg"
-         onclick="openLightbox(karenDriveway,1)"
-         alt="Driveway demolition">
+        <img src="assets/Karen%27s%20Uncle%20-%202.jpg"
+             onclick="openLightbox(karenDriveway,1)"
+             alt="Driveway demolition">
 
-    <img src="assets/karen-driveway-3.jpg"
-         onclick="openLightbox(karenDriveway,2)"
-         alt="Driveway preparation">
+        <img src="assets/Karen%27s%20Uncle%20-%203.jpg"
+             onclick="openLightbox(karenDriveway,2)"
+             alt="Driveway preparation">
 
-    <img src="assets/karen-driveway-4.jpg"
-         onclick="openLightbox(karenDriveway,3)"
-         alt="Concrete driveway work">
+        <img src="assets/Karen%27s%20Uncle%20-%204.jpg"
+             onclick="openLightbox(karenDriveway,3)"
+             alt="Concrete driveway work">
 
-    <img src="assets/karen-driveway-5.jpg"
-         onclick="openLightbox(karenDriveway,4)"
-         alt="Driveway concrete placement">
+        <img src="assets/Karen%27s%20Uncle%20-%205.jpg"
+             onclick="openLightbox(karenDriveway,4)"
+             alt="Driveway concrete placement">
 
-    <img src="assets/karen-driveway-6.jpg"
-         onclick="openLightbox(karenDriveway,5)"
-         alt="Completed residential driveway">
+        <img src="assets/Karen%27s%20Uncle%20-%206.jpg"
+             onclick="openLightbox(karenDriveway,5)"
+             alt="Completed residential driveway">
+
+    </div>
 
 </div>
 
@@ -808,8 +836,6 @@ body{
 <script>
 
 
-/* CRETE */
-
 const creteSlab = [
     "assets/concrete4.jpg",
     "assets/concrete3.jpg",
@@ -818,8 +844,6 @@ const creteSlab = [
     "assets/crete-backyard-5.jpg"
 ];
 
-
-/* GRAND ISLAND */
 
 const grandIsland = [
     "assets/concrete.jpg",
@@ -834,16 +858,12 @@ const grandIsland = [
 ];
 
 
-/* WILBER SLAB */
-
 const wilberSlab = [
     "assets/concrete6.jpg",
     "assets/grade3.jpg",
     "assets/footing.jpg"
 ];
 
-
-/* LINCOLN BACKYARD SLAB */
 
 const lincolnSlab = [
     "assets/concrete5.jpg",
@@ -852,8 +872,6 @@ const lincolnSlab = [
 ];
 
 
-/* WILBER PATIO */
-
 const wilberPatio = [
     "assets/concrete7.jpg",
     "assets/concrete8.jpg",
@@ -861,19 +879,15 @@ const wilberPatio = [
 ];
 
 
-/* LINCOLN DRIVEWAY RENOVATION */
-
 const karenDriveway = [
-    "assets/karen-driveway-1.jpg",
-    "assets/karen-driveway-2.jpg",
-    "assets/karen-driveway-3.jpg",
-    "assets/karen-driveway-4.jpg",
-    "assets/karen-driveway-5.jpg",
-    "assets/karen-driveway-6.jpg"
+    "assets/Karen%27s%20Uncle%20-%201.jpg",
+    "assets/Karen%27s%20Uncle%20-%202.jpg",
+    "assets/Karen%27s%20Uncle%20-%203.jpg",
+    "assets/Karen%27s%20Uncle%20-%204.jpg",
+    "assets/Karen%27s%20Uncle%20-%205.jpg",
+    "assets/Karen%27s%20Uncle%20-%206.jpg"
 ];
 
-
-/* DIANA FURST */
 
 const dianaFurst = [
     "assets/D.F-1.jpg",
@@ -884,8 +898,6 @@ const dianaFurst = [
     "assets/D.F-6.jpg"
 ];
 
-
-/* DANIEL PARIS */
 
 const danielParis = [
     "assets/DP-1.jpg",
@@ -903,7 +915,7 @@ const danielParis = [
 
 
 /* =========================
-   LIGHTBOX
+   LIGHTBOX FUNCTIONS
 ========================= */
 
 let currentPhotos = [];
